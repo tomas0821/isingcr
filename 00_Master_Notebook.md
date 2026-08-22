@@ -541,16 +541,30 @@ was the referee-flagged gap that motivated that script):
 - 2022: median p=**0.405**, significant in 0/16 seed-pairs — clean null.
 
 **λ_pol extension scan (0-8, λ_soc=0) — NOT a research result, see Notes:** accuracy
-climbs 62-68%→81-82% and best-T drifts sharply low (2026: 2.6→0.37) as λ_pol grows.
-Checked this against the metastable-freezing artifact (CLAUDE.md gotcha #7 — the classic
-failure this project has been burned by twice before) with a targeted per-seed spread
-check: at a normal grid point (λ_pol=2, T=0.85) 16 seeds spread std=2.5pp; at the
-concerning tail (λ_pol=8, T=0.37) std=**0.6pp** — *tighter*, not looser, agreement. That
-rules out the artifact (which predicts more disagreement, not less) and instead confirms
-field-dominance: `sign(h^pol)` matches `spin_empirical` on 487/488 nodes (99.8%) by
-construction (h^pol is derived from the same vote margin that defines the label), so a
-strong λ_pol just reproduces its own input. Real MC behavior, but circular — not reported
-as a finding.
+climbs 67.64%→92.70% and best-T drifts sharply low (2026: 2.605→0.369) as λ_pol grows
+(`scripts/run_3d_scan.py`, `scripts/submit_3d_scan_polext_2026.slurm`, job 125832,
+9-point array over λ_pol∈[0,8]/λ_soc=0/32 T, results in
+`data/processed/scan_3d_polext_pol{0-8}_soc0.npz`). Checked this against the
+metastable-freezing artifact (CLAUDE.md gotcha #7 — the classic failure this project has
+been burned by twice before) with a targeted per-seed spread check: at a normal grid
+point (λ_pol=2, T=0.848) 16 seeds spread std=2.5pp (mean=81.38%); at the concerning tail
+(λ_pol=8, T=0.369) std=**0.6pp** (mean=92.58%) — *tighter*, not looser, agreement
+(`data/processed/lambda_pol_circularity_perseed_2026.npz`). That rules out the artifact
+(which predicts more disagreement, not less) and instead confirms field-dominance:
+`sign(h^pol)` matches `spin_empirical` on 487/488 nodes (99.8%) by construction (h^pol is
+derived from the same vote margin that defines the label), so a strong λ_pol just
+reproduces its own input. Real MC behavior, but circular — not reported as a finding.
+
+**Correction (2026-08-22):** this entry originally read "accuracy climbs 62-68%→81-82%,"
+which was wrong — those numbers were 2022's extension range
+(`scan_3d_2022_polext_pol{0..8}_soc0.npz`), not 2026's; no 2026 extension file existed on
+disk at the time despite the manuscript citing 2026-specific numbers from it. Caught by
+the round-3 referee panel (`referee_report_2026-08-22.md`, finding #1) and confirmed
+independently before the fix: searched the whole filesystem, found no 2026 polext file.
+The best-T trajectory claim (2.6→0.37) and the per-seed-spread claim (2.5pp→0.6pp) were
+both already correct — only the accuracy-range numbers were mixed up between years. Fixed
+by re-running the actual 2026 scan (above) rather than editing the text to hedge around
+missing data.
 
 **Notes:** the composite social-development effect is real-but-borderline for 2026 and a
 clean null for 2022 — the *contrast* between years is the more defensible result than

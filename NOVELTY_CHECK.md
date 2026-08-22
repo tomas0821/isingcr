@@ -1,15 +1,14 @@
 # NOVELTY_CHECK — Ising-model sociophysics of Costa Rican electoral geography
 
-**Status as of 2026-08-18 (updated same day): CLEAN, now including distrito/cross-scale
-scope.** All close papers read in full, including Tiwari, Yang & Sen (2021) — resolved
-same day the paywall block was reported (see §3). The original 2026-08-16 check was
-scoped to canton-level framing only (see the "if scope expands to distrito-level" caveat
-that stood in §5 until today); §2b below re-runs the corner queries at distrito/
-cross-scale scope specifically because the manuscript's Introduction now includes
-"cross-scale replication" (the canton-vs-distrito ablation reversal) as part of its
-explicit novelty claim. Re-run again before submission regardless — this niche moves
-fast (3 of 8 adjacent papers found in the original check were 2025/2026 publications in
-a single check).
+**Status as of 2026-08-22: CLEAN, now including the two-field/GAM extension.** All
+close papers read in full, including Tiwari, Yang & Sen (2021, §3) and Massoli (2026,
+§2c). The original 2026-08-16 check was scoped to canton-level framing only; §2b
+(2026-08-18) extended to distrito/cross-scale scope; §2c (2026-08-22) extends again to
+the manuscript's second contribution (the two-field Hamiltonian and the GAM covariate
+search) added this session — CLEAN, Massoli (2026) remains the closest adjacent work
+and differs on network construction, field structure, dynamics, and domain (§2c).
+Re-run again before submission regardless — this niche moves fast (3 of 8 adjacent
+papers found in the original check were 2025/2026 publications in a single check).
 
 All 16 references in §3 are filed in Zotero under Sociophysics ▸ IsingCR (added
 2026-08-16 via the Zotero Web API, tagged `IsingCR-novelty-check`), all 16 PDFs attached
@@ -135,6 +134,72 @@ real geographic adjacency network, real election data, and an explicit compariso
 same analysis across two or more real spatial resolutions. The Introduction's "cross-scale
 replication" novelty claim is supported.
 
+## 2c. Two-field extension / GAM covariate search re-check (2026-08-22)
+
+The claim being defended here, additional to §1/§2b: **a two-field Ising extension on
+a real geographic adjacency network, testing multiple independently-sourced candidate
+predisposition fields (a socioeconomic development index, a non-circular
+prior-election political field, and capital-metropolitan-area membership) against each
+other, then characterizing the winning field's dynamical properties (multistability
+across MC seeds, temperature-sensitivity under a counterfactual sweep, single-node
+perturbation cascades) is not yet published.** Falsified by a paper that does the same
+combination: a real-network Ising/spin model with two or more independently-sourced
+external fields compared against each other for a real election, plus any of the
+model-native dynamical diagnostics listed above.
+
+Queries run:
+- FastTrack `run_duplication_test` (question: two-field Ising model on a real
+  geographic adjacency network, testing an independent socioeconomic covariate and a
+  capital-region/metropolitan-area membership indicator against each other as
+  predisposition-field candidates for real election outcomes, then characterizing the
+  stronger field's multistability, temperature-sensitivity, and single-node cascade
+  behavior) — 10 nearest neighbours returned, all off-field (air-pollution CAR models,
+  neuroimaging, COVID spatio-temporal review, colorectal cancer survival) — the
+  embedding search found no domain-relevant match at all, itself informative (nothing
+  sits close enough in the literature's own vocabulary to surface).
+- FastTrack `search_papers`: `"Ising model multiple external fields election geography
+  capital metropolitan region predisposition"` (2023–) — 3 total hits, none physics or
+  Ising-related.
+
+Given the sparse-embedding-match pattern above, we also re-read `massoli2026`
+(`papers_md/massoli2026/massoli2026.md`, already cited in the Introduction as adjacent
+"territorial socio-economic dynamics" work per §3) in full, specifically checking it
+against the two-field/GAM extension rather than only the original single-field claim it
+was already positioned against. Confirmed substantially different on every axis that
+would matter for a collision:
+- **Network**: Massoli's $J$ connects municipalities sharing *similar territorial
+  attributes* (altitude, population, urbanization, coastal status) — explicitly a
+  conceptual similarity graph, "independently of strict geographical proximity"
+  (Massoli §4.1) — not a real border-adjacency network. Our entire paper's premise
+  (Section~2.2) is the opposite: literal geographic adjacency, no conceptual-similarity
+  substitute anywhere.
+- **Field**: Massoli aggregates six composite indices into a *single* field via PCA
+  (Eq. 13); no analog of comparing multiple independently-sourced fields against each
+  other, no two-field Hamiltonian, no finding that one field-type (geography-linked)
+  beats another (development-linked) the way GAM beats MIDEPLAN/political-continuity
+  here.
+- **Dynamics**: Simulated Annealing initialized *at* the observed configuration, fixed
+  hyperbolic cooling $T(t)=T_0/t$, searching for nearby energetically favorable
+  configurations — not a temperature *scan* searching for the best-fit "social
+  temperature," which is this paper's central device throughout. No analog of a
+  multistability check (independent random-start seeds), a counterfactual
+  temperature-sensitivity sweep, or a single-node cascade test anywhere in Massoli.
+- **Uncertainty**: Massoli's uncertainty tool is Conformal Prediction on per-unit
+  marginal probabilities across $K$ independent sample batches — a genuinely different
+  (and itself novel) approach, not multistability/cascade-style dynamical
+  perturbation.
+- **Domain**: Italian central-hub-vs-peripheral-area municipal classification from an
+  administrative statistical register, no election data, no political geography, no
+  party-continuity concept — a different substantive question from Costa Rican
+  electoral geography entirely.
+
+**Verdict: the two-field/GAM extension is CLEAN.** No paper found combines a real
+geographic-adjacency Ising model, a genuine multi-field comparison among independently
+sourced predisposition candidates, and dynamical-system diagnostics (multistability,
+counterfactual temperature sensitivity, cascade testing) for a real election. Massoli
+(2026), the closest adjacent work in the existing bibliography, differs on every one of
+these axes and remains correctly positioned as adjacent-not-colliding.
+
 ## 3. Adjacent prior art — references, not collisions
 
 | Work | DOI / ID | Relationship |
@@ -170,3 +235,8 @@ before starting. No prior seed of this idea existed in `lit-gap-toolkit/SEED_GRA
   corner queries at that finer/broader scope~~ — done 2026-08-18, see §2b (CLEAN, distrito
   scope specifically covered). Re-run again if scope expands further (e.g. a third
   country, or a granularity finer than distrito).
+- **If scope expands to a multi-field extension or additional covariates:** ~~re-run the
+  corner queries against the two-field Hamiltonian and any new predisposition fields~~ —
+  done 2026-08-22, see §2c (CLEAN, MIDEPLAN/political-continuity/GAM covariate search
+  and the four model-native dynamical diagnostics specifically covered). Re-run again if
+  a further field or diagnostic is added.
