@@ -719,7 +719,14 @@ list and this limitation for anyone building on it.
 session. r=-0.589 with 2026's outcome (r=-0.653 with 2026's own margin); r=-0.277 with
 2022's outcome (r=-0.387 with 2022's own margin) -- weaker than 2026 but still clearly
 non-zero, unlike MIDEPLAN's essentially-null 2022 read. 186/488 (2026) and 184/483
-(2022) distritos fall in GAM -- a reasonable, non-degenerate ~38% split.
+(2022) distritos fall in GAM -- a reasonable, non-degenerate ~38% split. The underlying
+magnitude is large: in 2026, only 31.7% of GAM distritos are on the leading (Pueblo
+Soberano) side vs. 88.7% of periphery distritos (57.0pp gap); in 2022, GAM is an even
+split (50.0%) vs. 76.9% in the periphery (26.9pp gap) -- 2026's divide is roughly double
+2022's. (Logged here 2026-08-22 per referee finding: originally reported live in the
+manuscript without a corresponding notebook entry; recomputed and reproduced exactly
+from `build_graph_and_gam_field` in `scripts/run_gam_field.py`, no new MC run needed --
+this is a free vote-share tabulation, not a simulation output.)
 
 | Parameter | Value |
 |-----------|-------|

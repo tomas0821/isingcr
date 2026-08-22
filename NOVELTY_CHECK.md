@@ -154,12 +154,42 @@ Queries run:
   predisposition-field candidates for real election outcomes, then characterizing the
   stronger field's multistability, temperature-sensitivity, and single-node cascade
   behavior) — 10 nearest neighbours returned, all off-field (air-pollution CAR models,
-  neuroimaging, COVID spatio-temporal review, colorectal cancer survival) — the
-  embedding search found no domain-relevant match at all, itself informative (nothing
-  sits close enough in the literature's own vocabulary to surface).
+  neuroimaging, COVID spatio-temporal review, colorectal cancer survival). This is an
+  over-specified, multi-clause query, exactly the pattern §2's own methodology caveat
+  flags as producing unreliable `nearest_neighbours` (round-3 referee panel, 2026-08-22,
+  correctly caught this as a retrieval-quality risk in the original write-up, not
+  confirmatory evidence) — retained below for completeness but not relied upon; the
+  two shorter, 3-6-word re-runs below are the load-bearing checks.
 - FastTrack `search_papers`: `"Ising model multiple external fields election geography
   capital metropolitan region predisposition"` (2023–) — 3 total hits, none physics or
-  Ising-related.
+  Ising-related. Same over-specification caveat as above.
+- FastTrack `run_duplication_test`, re-run 2026-08-22 with a short (5-word) query per
+  §2's own methodology: `"Ising model capital region election geography"` — 10 nearest
+  neighbours, all off-field (a general Ising-model-history review, an economics/social-
+  interactions survey, an econophysics/sociophysics milestones review, and several
+  unrelated human-geography/political-economy papers) — no Ising-plus-real-election
+  collision.
+- FastTrack `search_papers`, short (5-word) query targeting the model-native
+  diagnostics specifically: `"Ising model multistability perturbation cascade
+  election"` (2020–) — 2 hits, both the same non-Ising control-theory paper (Bizyaeva,
+  Franci & Leonard, "Nonlinear Opinion Dynamics With Tunable Sensitivity," *IEEE Trans.
+  Autom. Control* 2022, arXiv:2009.04332): a continuous-time multi-option opinion-
+  dynamics model that does produce multistability, tunable sensitivity, and opinion
+  cascades on a network — genuinely adjacent vocabulary — but it is a control-theory
+  formalism (not Ising/statistical-mechanics), tested on no real election data, and
+  with no geographic adjacency network. Added to §3 below as a reference, not a
+  collision.
+- Exa neural search: `"Ising model two independent fields election metropolitan region
+  socioeconomic covariate spatial network"` — surfaced `massoli2026` again (confirming
+  it remains the closest hit under a fresh query angle), the already-known
+  `korbel2026`/`siegenfeld2020`/`mullick2025`, and one new not-yet-reviewed title, "An
+  Ising Similarity Regression Model for Modeling Multivariate Binary Data" (*Statistica
+  Sinica*) — a statistics-methods paper on Ising-model-structured regression for
+  correlated binary outcomes generally, with no election application and no geographic
+  network in the abstract; screened by title/venue only (a general statistical-methods
+  journal, not a match for this paper's political-geography domain) and not read in
+  full, since nothing in the available summary suggests a collision on this paper's
+  specific real-network/two-field/election combination. No other new hits.
 
 Given the sparse-embedding-match pattern above, we also re-read `massoli2026`
 (`papers_md/massoli2026/massoli2026.md`, already cited in the Introduction as adjacent
@@ -198,7 +228,12 @@ geographic-adjacency Ising model, a genuine multi-field comparison among indepen
 sourced predisposition candidates, and dynamical-system diagnostics (multistability,
 counterfactual temperature sensitivity, cascade testing) for a real election. Massoli
 (2026), the closest adjacent work in the existing bibliography, differs on every one of
-these axes and remains correctly positioned as adjacent-not-colliding.
+these axes and remains correctly positioned as adjacent-not-colliding. This verdict now
+rests on the same standard as §1/§2b: two short (3-6 word) FastTrack queries in addition
+to the original over-specified one, plus an Exa neural sweep, none of which surfaced a
+domain-relevant collision (2026-08-22, addressing a round-3 referee-panel finding that
+the original §2c write-up leaned on a single over-specified query and treated its
+off-topic results as more probative than the sparse-match pattern actually supports).
 
 ## 3. Adjacent prior art — references, not collisions
 
@@ -215,6 +250,7 @@ these axes and remains correctly positioned as adjacent-not-colliding.
 | Okamoto, "Maximizing gerrymandering through Ising model optimization," *Sci. Rep.* (2021) | 10.1038/s41598-021-03050-z | Found 2026-08-18 (§2b); filed in Zotero 2026-08-19 (item `ICQ37ZIC`, tagged `IsingCR-novelty-check`, not cited in the manuscript); converted to Markdown 2026-08-19 (`papers_md/okamoto2021/`, see `CONVERSION_NOTES.md`). Ising-model combinatorial optimization to construct maximally gerrymandered districts on a synthetic 70-cell grid — a districting-*design* question on synthetic data, not a real-network fit to real results. Not a collision. |
 | Elías Chavarría-Mora, "Una mirada cantonal mediante estadística espacial al efecto del desarrollo humano sobre el apoyo electoral en la segunda ronda de la elección presidencial de 2018" (2022) | — (found via Exa; not in Crossref/OpenAlex/S2) | **Direct system-level precedent, different method.** Canton-level spatial statistics (not Ising/physics) on the *same* 2018 Costa Rican runoff this project models. Must be cited; may help explain this project's own open finding that 2018 behaves differently from 2022/2026 (see IsingCR `README.md`/`CLAUDE.md` "Current state"). |
 | "PARTIDOS CON O SIN BASE TERRITORIAL EN COSTA RICA: ANÁLISIS DE LA DISTRIBUCIÓN GEOGRÁFICA DE LOS APOYOS PARTIDARIOS 1998 AL 2022" | — (found via Exa) | Political-science (not physics) analysis of the *same* multi-election geographic territory this project spans (1998–2022 ⊃ our 2018/2022/2026). Confirms PAC (2018's winner) has a documented urban/Gran Área Metropolitana-concentrated support base unlike PLN's consolidated national territorial base (per WebSearch summary of secondary sources) — a plausible political-science lead for *why* 2018's geography-vs-baseline result differs from 2022/2026's. Must cite; worth following up as a substantive explanation, not just a novelty reference. |
+| Bizyaeva, Franci & Leonard, "Nonlinear Opinion Dynamics With Tunable Sensitivity," *IEEE Trans. Autom. Control* (2022) | 10.1109/tac.2022.3159527 (arXiv:2009.04332) | Found 2026-08-22 (§2c, short-query re-check). A continuous-time multi-option opinion-dynamics model on a network that genuinely produces multistable agreement/disagreement, tunable sensitivity, and opinion cascades -- vocabulary directly adjacent to this paper's multistability/counterfactual/cascade diagnostics (Sections 4.9-4.11). But it is a control-theory formalism (nonlinear ODEs with saturating exchange, not an Ising/spin Monte Carlo model), tested on no real election data, and with no geographic adjacency network -- not a collision, but close enough on the diagnostic vocabulary that a referee could ask about it. |
 
 ## 4. Alternatives checked and not pursued further here
 
