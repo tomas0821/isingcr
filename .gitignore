@@ -1,4 +1,12 @@
 __pycache__/
 *.pyc
-.pytest_cache/
+.venv/
 *.egg-info/
+figures/*.png
+figures/*.pdf
+data/raw/*
+!data/raw/.gitkeep
+.pytest_cache/
+# manuscript/ is its own independent git repo (github.com/tomas0821/isingcr-manuscript),
+# versioned and pushed separately -- not embedded here.
+manuscript/

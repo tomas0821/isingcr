@@ -4,6 +4,7 @@ from isingcr.simulation.observables import (
     alignment_fraction,
     mcnemar_test,
     spatial_block_permutation_test,
+    spatial_block_permutation_test_paired,
     specific_heat,
     susceptibility,
     symmetric_alignment_fraction,
@@ -120,3 +121,34 @@ def test_spatial_block_permutation_penalizes_clustered_discordance():
     assert result["n_blocks"] == 31
     assert mc["exact_pvalue"] < 0.05
     assert result["p_value"] > mc["exact_pvalue"]
+
+
+def test_spatial_block_permutation_paired_detects_b_better_than_a():
+    n = 40
+    empirical = np.array([1] * 30 + [-1] * 10)
+    spins_a = np.ones(n, dtype=int)  # always predicts majority -- wrong on all 10 minority sites
+    spins_b = empirical.copy()  # perfect
+    blocks = np.arange(n)
+    rng = np.random.default_rng(3)
+    result = spatial_block_permutation_test_paired(spins_a, spins_b, empirical, blocks,
+                                                     n_permutations=999, rng=rng)
+    assert result["observed_statistic"] > 0  # b beats a
+    assert result["p_value"] < 0.05
+    # symmetric under swapping a/b: sign flips, p-value unchanged
+    rng2 = np.random.default_rng(3)
+    swapped = spatial_block_permutation_test_paired(spins_b, spins_a, empirical, blocks,
+                                                      n_permutations=999, rng=rng2)
+    assert swapped["observed_statistic"] == -result["observed_statistic"]
+    assert swapped["p_value"] == result["p_value"]
+
+
+def test_spatial_block_permutation_paired_no_difference():
+    empirical = np.array([1, 1, -1, -1])
+    spins_a = np.array([1, 1, 1, 1])
+    spins_b = np.array([1, 1, 1, 1])
+    blocks = np.array([0, 1, 2, 3])
+    rng = np.random.default_rng(4)
+    result = spatial_block_permutation_test_paired(spins_a, spins_b, empirical, blocks,
+                                                     n_permutations=200, rng=rng)
+    assert result["observed_statistic"] == 0.0
+    assert result["p_value"] == 1.0

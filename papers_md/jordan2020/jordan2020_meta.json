@@ -1,0 +1,268 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Katherine Follette",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          211.7898281299197,
+          155.93873272213324
+        ],
+        [
+          281.96010022679866,
+          155.93873272213324
+        ],
+        [
+          281.96010022679866,
+          168.93280029296875
+        ],
+        [
+          211.7898281299197,
+          168.93280029296875
+        ]
+      ]
+    },
+    {
+      "title": "References",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          389.7033666807698,
+          97.72025555795967
+        ],
+        [
+          431.15426335947336,
+          97.72025555795967
+        ],
+        [
+          431.15426335947336,
+          109.75616455078125
+        ],
+        [
+          389.7033666807698,
+          109.75616455078125
+        ]
+      ]
+    },
+    {
+      "title": "COMPLEX SYSTEMS",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          34.18696834458512,
+          249.91589335220118
+        ],
+        [
+          132.06112670898438,
+          249.91589335220118
+        ],
+        [
+          132.06112670898438,
+          265.318359375
+        ],
+        [
+          34.18696834458512,
+          265.318359375
+        ]
+      ]
+    },
+    {
+      "title": "From ferromagnets to electoral instability",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          34.04264599009785,
+          265.97137451171875
+        ],
+        [
+          475.54317168805096,
+          265.97137451171875
+        ],
+        [
+          475.54317168805096,
+          299.5633544921875
+        ],
+        [
+          34.04264599009785,
+          299.5633544921875
+        ]
+      ]
+    },
+    {
+      "title": "Soren Jordan",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          33.44638924394506,
+          352.37455380697384
+        ],
+        [
+          101.42226688567577,
+          352.37455380697384
+        ],
+        [
+          101.42226688567577,
+          368.6092529296875
+        ],
+        [
+          33.44638924394506,
+          368.6092529296875
+        ]
+      ]
+    },
+    {
+      "title": "Soren Jordan",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          389.6760152437224,
+          333.34183476886477
+        ],
+        [
+          451.921471891235,
+          333.34183476886477
+        ],
+        [
+          451.921471891235,
+          347.43280029296875
+        ],
+        [
+          389.6760152437224,
+          347.43280029296875
+        ]
+      ]
+    },
+    {
+      "title": "References",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          389.31998841408216,
+          421.65086878193495
+        ],
+        [
+          430.7179231811831,
+          421.65086878193495
+        ],
+        [
+          430.7179231811831,
+          433.1498107910156
+        ],
+        [
+          389.31998841408216,
+          433.1498107910156
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          296
+        ],
+        [
+          "Line",
+          127
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "ListItem",
+          6
+        ],
+        [
+          "SectionHeader",
+          5
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "ListGroup",
+          1
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          418
+        ],
+        [
+          "Line",
+          171
+        ],
+        [
+          "ListItem",
+          15
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/Jordan - 2020 - From ferromagnets to electoral instability"
+}

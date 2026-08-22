@@ -1,0 +1,1484 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Inference and Influence of Large-Scale Social Networks Using Snapshot Population Behaviour\nwithout Network Data",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          64.9929084777832,
+          48.78925323486328
+        ],
+        [
+          548.9991302490234,
+          48.78925323486328
+        ],
+        [
+          548.9991302490234,
+          79.91302490234375
+        ],
+        [
+          64.9929084777832,
+          79.91302490234375
+        ]
+      ]
+    },
+    {
+      "title": "I. INTRODUCTION",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          130.04017639160156,
+          307.4416809082031
+        ],
+        [
+          219.6749725341797,
+          307.4416809082031
+        ],
+        [
+          219.6749725341797,
+          322.04473876953125
+        ],
+        [
+          130.04017639160156,
+          322.04473876953125
+        ]
+      ]
+    },
+    {
+      "title": "II. AN INTERPRETABLE GENERATIVE MODEL FOR\nBOTH POPULATION BEHAVIOUR AND SOCIAL\nNETWORKS IN BLAU SPACE",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          59.25910949707031,
+          572.9794464111328
+        ],
+        [
+          291.4166793823242,
+          572.9794464111328
+        ],
+        [
+          291.4166793823242,
+          606.8834991455078
+        ],
+        [
+          59.25910949707031,
+          606.8834991455078
+        ]
+      ]
+    },
+    {
+      "title": "III. INFERENCE METHOD FOR MODEL PARAMETERS",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          316.0144729614258,
+          639.4392700195312
+        ],
+        [
+          565.9938812255859,
+          639.4392700195312
+        ],
+        [
+          565.9938812255859,
+          653.1452178955078
+        ],
+        [
+          316.0144729614258,
+          653.1452178955078
+        ]
+      ]
+    },
+    {
+      "title": "IV. RESULTS",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          405.2046203613281,
+          215.1709213256836
+        ],
+        [
+          470.45933532714844,
+          215.1709213256836
+        ],
+        [
+          470.45933532714844,
+          226.942626953125
+        ],
+        [
+          405.2046203613281,
+          226.942626953125
+        ]
+      ]
+    },
+    {
+      "title": "A. ABC Inference can estimate model parameters from\nsynthetic data",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          328.3337860107422,
+          239.34873962402344
+        ],
+        [
+          553.5423889160156,
+          239.34873962402344
+        ],
+        [
+          553.5423889160156,
+          262.556396484375
+        ],
+        [
+          328.3337860107422,
+          262.556396484375
+        ]
+      ]
+    },
+    {
+      "title": "B. Inferred parameters for Mayoral Elections and EU\nReferendum are consonant with homophilic tendencies and\nvoting preferences.",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          322.92354583740234,
+          147.2845687866211
+        ],
+        [
+          557.782470703125,
+          147.2845687866211
+        ],
+        [
+          557.782470703125,
+          180.85821533203125
+        ],
+        [
+          322.92354583740234,
+          180.85821533203125
+        ]
+      ]
+    },
+    {
+      "title": "C. The kernel-Blau-Ising model accurately predicts\nunobserved voting outcomes",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          72.46208381652832,
+          431.3348693847656
+        ],
+        [
+          278.53433990478516,
+          431.3348693847656
+        ],
+        [
+          278.53433990478516,
+          454.3153076171875
+        ],
+        [
+          72.46208381652832,
+          454.3153076171875
+        ]
+      ]
+    },
+    {
+      "title": "D. Reducing homophilic tendencies and social inequality can\nreduce polarisation in silico",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          316.6951446533203,
+          502.16505432128906
+        ],
+        [
+          564.2039337158203,
+          502.16505432128906
+        ],
+        [
+          564.2039337158203,
+          525.6022644042969
+        ],
+        [
+          316.6951446533203,
+          525.6022644042969
+        ]
+      ]
+    },
+    {
+      "title": "V. DISCUSSION",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          399.76812744140625,
+          88.30270957946777
+        ],
+        [
+          475.2255554199219,
+          88.30270957946777
+        ],
+        [
+          475.2255554199219,
+          100.9847412109375
+        ],
+        [
+          399.76812744140625,
+          100.9847412109375
+        ]
+      ]
+    },
+    {
+      "title": "ACKNOWLEDGMENTS",
+      "heading_level": null,
+      "page_id": 10,
+      "polygon": [
+        [
+          385.90576171875,
+          153.95721817016602
+        ],
+        [
+          489.18370056152344,
+          153.95721817016602
+        ],
+        [
+          489.18370056152344,
+          166.86724853515625
+        ],
+        [
+          385.90576171875,
+          166.86724853515625
+        ]
+      ]
+    },
+    {
+      "title": "Inference and Influence of Large-Scale Social\nNetworks Using Snapshot Population\nBehaviour without Network Data",
+      "heading_level": null,
+      "page_id": 12,
+      "polygon": [
+        [
+          74.12790298461914,
+          102.72479248046875
+        ],
+        [
+          532.7891693115234,
+          102.72479248046875
+        ],
+        [
+          532.7891693115234,
+          192.411376953125
+        ],
+        [
+          74.12790298461914,
+          192.411376953125
+        ]
+      ]
+    },
+    {
+      "title": "1 Datasets",
+      "heading_level": null,
+      "page_id": 12,
+      "polygon": [
+        [
+          74.3708724975586,
+          265.31998443603516
+        ],
+        [
+          166.28512573242188,
+          265.31998443603516
+        ],
+        [
+          166.28512573242188,
+          287.8995666503906
+        ],
+        [
+          74.3708724975586,
+          287.8995666503906
+        ]
+      ]
+    },
+    {
+      "title": "2 Inferring model parameters in Synthetic data",
+      "heading_level": null,
+      "page_id": 13,
+      "polygon": [
+        [
+          74.55121421813965,
+          104.1529541015625
+        ],
+        [
+          438.4668731689453,
+          104.1529541015625
+        ],
+        [
+          438.4668731689453,
+          126.56072998046875
+        ],
+        [
+          74.55121421813965,
+          126.56072998046875
+        ]
+      ]
+    },
+    {
+      "title": "2.1 Rescaling population size",
+      "heading_level": null,
+      "page_id": 13,
+      "polygon": [
+        [
+          74.36401748657227,
+          137.22894287109375
+        ],
+        [
+          265.0759735107422,
+          137.22894287109375
+        ],
+        [
+          265.0759735107422,
+          155.902099609375
+        ],
+        [
+          74.36401748657227,
+          155.902099609375
+        ]
+      ]
+    },
+    {
+      "title": "2.2 Degeneracy between network degree and the connection strength",
+      "heading_level": null,
+      "page_id": 14,
+      "polygon": [
+        [
+          75.14396667480469,
+          518.9918060302734
+        ],
+        [
+          508.7097930908203,
+          518.9918060302734
+        ],
+        [
+          508.7097930908203,
+          537.7326049804688
+        ],
+        [
+          75.14396667480469,
+          537.7326049804688
+        ]
+      ]
+    },
+    {
+      "title": "3 Synthetic and electoral data magnetisation",
+      "heading_level": null,
+      "page_id": 15,
+      "polygon": [
+        [
+          74.7725658416748,
+          516.3037109375
+        ],
+        [
+          417.2186279296875,
+          516.3037109375
+        ],
+        [
+          417.2186279296875,
+          538.7114715576172
+        ],
+        [
+          74.7725658416748,
+          538.7114715576172
+        ]
+      ]
+    },
+    {
+      "title": "4 Bootstrapping population Blau space coordinates from Cen-\nsus micro-data",
+      "heading_level": null,
+      "page_id": 16,
+      "polygon": [
+        [
+          75.0278549194336,
+          397.15443420410156
+        ],
+        [
+          541.9634399414062,
+          397.15443420410156
+        ],
+        [
+          541.9634399414062,
+          442.04302978515625
+        ],
+        [
+          75.0278549194336,
+          442.04302978515625
+        ]
+      ]
+    },
+    {
+      "title": "5 Multiple Linear Regression on electoral data",
+      "heading_level": null,
+      "page_id": 17,
+      "polygon": [
+        [
+          74.61740684509277,
+          574.9201965332031
+        ],
+        [
+          432.6529998779297,
+          574.9201965332031
+        ],
+        [
+          432.6529998779297,
+          597.3279571533203
+        ],
+        [
+          74.61740684509277,
+          597.3279571533203
+        ]
+      ]
+    },
+    {
+      "title": "6 ABC inference only with External Fields (J = 0)",
+      "heading_level": null,
+      "page_id": 18,
+      "polygon": [
+        [
+          74.30423927307129,
+          216.20556640625
+        ],
+        [
+          458.4207458496094,
+          216.20556640625
+        ],
+        [
+          458.4207458496094,
+          238.61334228515625
+        ],
+        [
+          74.30423927307129,
+          238.61334228515625
+        ]
+      ]
+    },
+    {
+      "title": "7 ABC inference on electoral data with 280 wards and 18\nBoroughs as input data",
+      "heading_level": null,
+      "page_id": 19,
+      "polygon": [
+        [
+          75.52408218383789,
+          606.4385833740234
+        ],
+        [
+          534.5391082763672,
+          606.4385833740234
+        ],
+        [
+          534.5391082763672,
+          650.9661407470703
+        ],
+        [
+          75.52408218383789,
+          650.9661407470703
+        ]
+      ]
+    },
+    {
+      "title": "8 Electoral outcomes distributions and polarisation",
+      "heading_level": null,
+      "page_id": 20,
+      "polygon": [
+        [
+          74.83795166015625,
+          536.5993041992188
+        ],
+        [
+          467.0226745605469,
+          536.5993041992188
+        ],
+        [
+          467.0226745605469,
+          559.007080078125
+        ],
+        [
+          74.83795166015625,
+          559.007080078125
+        ]
+      ]
+    },
+    {
+      "title": "Table S1: Electoral outcomes Polarisation",
+      "heading_level": null,
+      "page_id": 21,
+      "polygon": [
+        [
+          75.0494441986084,
+          221.49739837646484
+        ],
+        [
+          279.16088104248047,
+          221.49739837646484
+        ],
+        [
+          279.16088104248047,
+          237.4246826171875
+        ],
+        [
+          75.0494441986084,
+          237.4246826171875
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          165
+        ],
+        [
+          "Line",
+          92
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          224
+        ],
+        [
+          "Line",
+          89
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          732
+        ],
+        [
+          "Line",
+          158
+        ],
+        [
+          "Text",
+          10
+        ],
+        [
+          "Equation",
+          5
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          666
+        ],
+        [
+          "Line",
+          157
+        ],
+        [
+          "Text",
+          7
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "Equation",
+          1
+        ],
+        [
+          "TableGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          443
+        ],
+        [
+          "Line",
+          99
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          442
+        ],
+        [
+          "Line",
+          69
+        ],
+        [
+          "Text",
+          3
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Diagram",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          155
+        ],
+        [
+          "Line",
+          43
+        ],
+        [
+          "Text",
+          3
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          548
+        ],
+        [
+          "Line",
+          143
+        ],
+        [
+          "Text",
+          7
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          332
+        ],
+        [
+          "Line",
+          111
+        ],
+        [
+          "Text",
+          3
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          170
+        ],
+        [
+          "Line",
+          80
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 10,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          287
+        ],
+        [
+          "Line",
+          114
+        ],
+        [
+          "ListItem",
+          9
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 11,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          92
+        ],
+        [
+          "Line",
+          33
+        ],
+        [
+          "ListItem",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 12,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          114
+        ],
+        [
+          "Line",
+          37
+        ],
+        [
+          "Text",
+          3
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 13,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          564
+        ],
+        [
+          "Line",
+          135
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 14,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          158
+        ],
+        [
+          "Line",
+          19
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Text",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 15,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          115
+        ],
+        [
+          "Line",
+          15
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 16,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          123
+        ],
+        [
+          "Line",
+          36
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 17,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          66
+        ],
+        [
+          "Line",
+          16
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Text",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 18,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          179
+        ],
+        [
+          "Line",
+          44
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Text",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 19,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          204
+        ],
+        [
+          "Line",
+          47
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 20,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          177
+        ],
+        [
+          "Line",
+          37
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "Diagram",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Equation",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 21,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          119
+        ],
+        [
+          "Line",
+          24
+        ],
+        [
+          "Text",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/godoylorite2020"
+}

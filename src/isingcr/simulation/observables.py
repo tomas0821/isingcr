@@ -124,9 +124,39 @@ def spatial_block_permutation_test(model_spins: np.ndarray, empirical_spins: np.
     blocks (sets the coarsest achievable p-value resolution, 2/2^n_blocks),
     and a two-sided permutation p-value.
     """
-    rng = rng if rng is not None else np.random.default_rng()
     null_pred = np.full_like(empirical_spins, majority_label)
-    signed = (model_spins == empirical_spins).astype(int) - (null_pred == empirical_spins).astype(int)
+    return _spatial_block_permutation(plus_spins=model_spins, minus_spins=null_pred,
+                                       empirical_spins=empirical_spins, blocks=blocks,
+                                       n_permutations=n_permutations, rng=rng)
+
+
+def spatial_block_permutation_test_paired(spins_a: np.ndarray, spins_b: np.ndarray,
+                                           empirical_spins: np.ndarray, blocks: np.ndarray,
+                                           n_permutations: int = 999,
+                                           rng: np.random.Generator | None = None) -> dict:
+    """Like `spatial_block_permutation_test`, but compares two fitted models'
+    predictions directly against each other instead of one model against a
+    constant majority-class baseline.
+
+    Every significance test elsewhere in this project (McNemar or
+    spatial-block) compares a single model's predictions to the trivial
+    majority baseline; none directly tests whether two models (e.g. h=0 vs.
+    h=margin) differ from *each other*. This is that direct paired test:
+    positive `observed_statistic` means `spins_b` matches the empirical map
+    on more units than `spins_a` does, among the units where exactly one of
+    the two is right.
+    """
+    return _spatial_block_permutation(plus_spins=spins_b, minus_spins=spins_a,
+                                       empirical_spins=empirical_spins, blocks=blocks,
+                                       n_permutations=n_permutations, rng=rng)
+
+
+def _spatial_block_permutation(plus_spins, minus_spins, empirical_spins, blocks,
+                                n_permutations, rng):
+    """observed_statistic > 0 means plus_spins matches empirical_spins more
+    often than minus_spins does, among the units where exactly one is right."""
+    rng = rng if rng is not None else np.random.default_rng()
+    signed = (plus_spins == empirical_spins).astype(int) - (minus_spins == empirical_spins).astype(int)
 
     blocks = np.asarray(blocks)
     unique_blocks = np.unique(blocks)

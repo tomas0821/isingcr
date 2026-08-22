@@ -1,0 +1,938 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Negative Representation and Instability in Democratic Elections",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          141.4965591430664,
+          44.52919864654541
+        ],
+        [
+          472.12303161621094,
+          44.52919864654541
+        ],
+        [
+          472.12303161621094,
+          60.11163330078125
+        ],
+        [
+          141.4965591430664,
+          60.11163330078125
+        ]
+      ]
+    },
+    {
+      "title": "Acknowledgements",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          398.619873046875,
+          640.8742218017578
+        ],
+        [
+          476.8249053955078,
+          640.8742218017578
+        ],
+        [
+          476.8249053955078,
+          652.7989654541016
+        ],
+        [
+          398.619873046875,
+          652.7989654541016
+        ]
+      ]
+    },
+    {
+      "title": "S1. METHODS",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          140.6846466064453,
+          322.76390075683594
+        ],
+        [
+          210.31780242919922,
+          322.76390075683594
+        ],
+        [
+          210.31780242919922,
+          334.467041015625
+        ],
+        [
+          140.6846466064453,
+          334.467041015625
+        ]
+      ]
+    },
+    {
+      "title": "A. Translational invariance",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          119.06133270263672,
+          347.86029052734375
+        ],
+        [
+          232.47637939453125,
+          347.86029052734375
+        ],
+        [
+          232.47637939453125,
+          359.10101318359375
+        ],
+        [
+          119.06133270263672,
+          359.10101318359375
+        ]
+      ]
+    },
+    {
+      "title": "B. Representation in the large-population limit",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          81.01861953735352,
+          555.3144378662109
+        ],
+        [
+          269.51710510253906,
+          555.3144378662109
+        ],
+        [
+          269.51710510253906,
+          566.8100433349609
+        ],
+        [
+          81.01861953735352,
+          566.8100433349609
+        ]
+      ]
+    },
+    {
+      "title": "C. Nash equilibria of the electoral game",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          94.38931274414062,
+          199.37674713134766
+        ],
+        [
+          256.0374526977539,
+          199.37674713134766
+        ],
+        [
+          256.0374526977539,
+          210.35861206054688
+        ],
+        [
+          94.38931274414062,
+          210.35861206054688
+        ]
+      ]
+    },
+    {
+      "title": "D. The utility difference model",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          111.35947036743164,
+          398.8656005859375
+        ],
+        [
+          239.22869110107422,
+          398.8656005859375
+        ],
+        [
+          239.22869110107422,
+          410.6727294921875
+        ],
+        [
+          111.35947036743164,
+          410.6727294921875
+        ]
+      ]
+    },
+    {
+      "title": "E. Representation in the utility difference model",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          340.71654510498047,
+          381.1962890625
+        ],
+        [
+          538.3107604980469,
+          381.1962890625
+        ],
+        [
+          538.3107604980469,
+          392.5147705078125
+        ],
+        [
+          340.71654510498047,
+          392.5147705078125
+        ]
+      ]
+    },
+    {
+      "title": "F. Instability in the utility difference model",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          88.41013526916504,
+          587.8835906982422
+        ],
+        [
+          262.60162353515625,
+          587.8835906982422
+        ],
+        [
+          262.60162353515625,
+          599.7160186767578
+        ],
+        [
+          88.41013526916504,
+          599.7160186767578
+        ]
+      ]
+    },
+    {
+      "title": "G. Connection with the mean-field Ising model",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          343.0071258544922,
+          127.77510452270508
+        ],
+        [
+          534.7510986328125,
+          127.77510452270508
+        ],
+        [
+          534.7510986328125,
+          138.45263671875
+        ],
+        [
+          343.0071258544922,
+          138.45263671875
+        ]
+      ]
+    },
+    {
+      "title": "H. Empirical data",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          396.5371398925781,
+          661.9594116210938
+        ],
+        [
+          478.6150817871094,
+          661.9594116210938
+        ],
+        [
+          478.6150817871094,
+          674.1479949951172
+        ],
+        [
+          396.5371398925781,
+          674.1479949951172
+        ]
+      ]
+    },
+    {
+      "title": "S2. SUPPLEMENTARY TEXT",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          372.2417449951172,
+          222.2259292602539
+        ],
+        [
+          503.7198028564453,
+          222.2259292602539
+        ],
+        [
+          503.7198028564453,
+          232.6417236328125
+        ],
+        [
+          372.2417449951172,
+          232.6417236328125
+        ]
+      ]
+    },
+    {
+      "title": "A. Multidimensional opinion space",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          366.62647247314453,
+          248.34642791748047
+        ],
+        [
+          510.9158020019531,
+          248.34642791748047
+        ],
+        [
+          510.9158020019531,
+          258.84375
+        ],
+        [
+          366.62647247314453,
+          258.84375
+        ]
+      ]
+    },
+    {
+      "title": "B. The Owen-Shapley index as a special case",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          84.28145027160645,
+          614.8924255371094
+        ],
+        [
+          265.3520736694336,
+          614.8924255371094
+        ],
+        [
+          265.3520736694336,
+          626.8000030517578
+        ],
+        [
+          84.28145027160645,
+          626.8000030517578
+        ]
+      ]
+    },
+    {
+      "title": "C. A brief review of social choice theory",
+      "heading_level": null,
+      "page_id": 10,
+      "polygon": [
+        [
+          356.4789276123047,
+          453.2584991455078
+        ],
+        [
+          519.8602294921875,
+          453.2584991455078
+        ],
+        [
+          519.8602294921875,
+          464.43499755859375
+        ],
+        [
+          356.4789276123047,
+          464.43499755859375
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          415
+        ],
+        [
+          "Line",
+          108
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "Reference",
+          7
+        ],
+        [
+          "Equation",
+          5
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Footnote",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          589
+        ],
+        [
+          "Line",
+          130
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "Reference",
+          5
+        ],
+        [
+          "Equation",
+          4
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          509
+        ],
+        [
+          "Line",
+          119
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "Reference",
+          4
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "Equation",
+          2
+        ],
+        [
+          "FigureGroup",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          422
+        ],
+        [
+          "Line",
+          114
+        ],
+        [
+          "Text",
+          7
+        ],
+        [
+          "Equation",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ],
+        [
+          "Reference",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          666
+        ],
+        [
+          "Line",
+          124
+        ],
+        [
+          "Text",
+          10
+        ],
+        [
+          "Equation",
+          5
+        ],
+        [
+          "Reference",
+          5
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          836
+        ],
+        [
+          "Line",
+          153
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "Reference",
+          9
+        ],
+        [
+          "Equation",
+          7
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          1089
+        ],
+        [
+          "Line",
+          241
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "Equation",
+          8
+        ],
+        [
+          "Reference",
+          4
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          811
+        ],
+        [
+          "Line",
+          154
+        ],
+        [
+          "Text",
+          12
+        ],
+        [
+          "Reference",
+          6
+        ],
+        [
+          "Equation",
+          5
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          542
+        ],
+        [
+          "Line",
+          129
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "Equation",
+          6
+        ],
+        [
+          "Reference",
+          3
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          484
+        ],
+        [
+          "Line",
+          120
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "Equation",
+          3
+        ],
+        [
+          "Footnote",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Reference",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 10,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          819
+        ],
+        [
+          "Line",
+          146
+        ],
+        [
+          "Text",
+          13
+        ],
+        [
+          "Equation",
+          3
+        ],
+        [
+          "Footnote",
+          2
+        ],
+        [
+          "Reference",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 11,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          394
+        ],
+        [
+          "Line",
+          119
+        ],
+        [
+          "Reference",
+          15
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 12,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          455
+        ],
+        [
+          "Line",
+          123
+        ],
+        [
+          "Reference",
+          36
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ],
+        [
+          "Text",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/Siegenfeld and Bar-Yam - 2020 - Negative representation and instability in democratic elections"
+}
