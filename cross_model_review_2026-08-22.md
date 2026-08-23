@@ -2,7 +2,7 @@
 type: cross-model-review
 draft: manuscript/main.tex
 date: 2026-08-22
-referees: [antigravity (model id not printed by CLI), deepseek-reasoner (via opencode)]
+referees: [antigravity (Gemini 3.7 Flash, High), deepseek-reasoner (via opencode)]
 verdict: minor-to-major revisions
 ---
 
