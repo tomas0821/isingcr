@@ -1,14 +1,18 @@
 # NOVELTY_CHECK — Ising-model sociophysics of Costa Rican electoral geography
 
-**Status as of 2026-08-22: CLEAN, now including the two-field/GAM extension.** All
+**Status as of 2026-08-25: CLEAN, pre-submission re-check complete.** All
 close papers read in full, including Tiwari, Yang & Sen (2021, §3) and Massoli (2026,
 §2c). The original 2026-08-16 check was scoped to canton-level framing only; §2b
-(2026-08-18) extended to distrito/cross-scale scope; §2c (2026-08-22) extends again to
+(2026-08-18) extended to distrito/cross-scale scope; §2c (2026-08-22) extended again to
 the manuscript's second contribution (the two-field Hamiltonian and the GAM covariate
-search) added this session — CLEAN, Massoli (2026) remains the closest adjacent work
-and differs on network construction, field structure, dynamics, and domain (§2c).
-Re-run again before submission regardless — this niche moves fast (3 of 8 adjacent
-papers found in the original check were 2025/2026 publications in a single check).
+search); §2d (2026-08-25) is the pre-submission re-run across all three claims -- still
+CLEAN, no collision found, Massoli (2026) remains the closest adjacent work and still
+differs on network construction, field structure, dynamics, and domain. Several new
+2026 Ising-and-elections/voting papers surfaced (§2d, §3) but none use a real
+geographic adjacency network fit to real election results. Re-run again immediately
+before the actual submission click if more than a few days elapse -- this niche moves
+fast (3 of 8 adjacent papers found in the original check were 2025/2026 publications in
+a single check; §2d found 4 more new 2026 publications in one afternoon).
 
 All 16 references in §3 are filed in Zotero under Sociophysics ▸ IsingCR (added
 2026-08-16 via the Zotero Web API, tagged `IsingCR-novelty-check`), all 16 PDFs attached
@@ -235,6 +239,78 @@ domain-relevant collision (2026-08-22, addressing a round-3 referee-panel findin
 the original §2c write-up leaned on a single over-specified query and treated its
 off-topic results as more probative than the sparse-match pattern actually supports).
 
+## 2d. Pre-submission re-check (2026-08-25)
+
+Re-ran the full corner against all three claims (§1 canton-level, §2b distrito/cross-scale,
+§2c two-field/GAM) since 3 days had elapsed since §2c and this niche moves fast. Queries run:
+
+- FastTrack `run_duplication_test`: `"Ising model election geography adjacency network"`
+  (10 neighbours -- an Ising-centennial review, a network-science-methodology paper, an
+  ecosystem-management report, a signed-networks balance paper, a voter-model-on-adaptive-
+  networks paper, a redistricting-Markov-chain paper, two Galam opinion-dynamics papers, a
+  private/public opinion-discrepancy paper, a bot-detection paper -- none combine an
+  Ising/spin model with a real election and a real geographic adjacency network);
+  `"Ising model capital region election geography"` (10 neighbours, same off-field pattern
+  as §2c's re-run of this exact query -- no new collision); `"Ising model spatial resolution
+  multiple scales election geography canton district"` (near-zero match, retrieval artifact
+  per FastTrack's own caveat, not evidence either way); `"Ising model multiple external
+  fields election capital region socioeconomic"` (10 neighbours, all off-field -- economics/
+  institutions/statebuilding papers, no Ising-plus-election collision).
+- FastTrack `search_papers`: `"Ising model election spatial network Costa Rica"` (2026-),
+  0 hits.
+- OpenAlex direct: `"Ising model election geographic network spatial resolution"`
+  (2026-08-01 onward), 0 hits.
+- Semantic Scholar direct: `"Ising model real geographic network election Monte Carlo
+  ablation"` (2026-08-15 onward), 0 hits.
+- Exa neural search (two sweeps): `"Ising model geographic adjacency network election
+  Monte Carlo simulation 2026"` and `"Costa Rica elections Ising model spatial statistics
+  geographic network 2026"` -- surfaced several genuinely new 2026 papers (below) plus
+  more Spanish-language Costa Rican political-science literature (K-means/MIDEPLAN
+  clustering of 2018 distrito results, a provincial-redistricting counterfactual study, an
+  electorate-size/competitiveness regression study), none physics-based and none a
+  collision, consistent with the §2 pattern that Exa is the only engine surfacing this
+  literature at all.
+
+**New 2026 Ising-and-elections/voting papers found, all screened and none a collision:**
+- Liu, "Opinion Formation at Ising Social Networks" (*Information*, MDPI, 2026;
+  arXiv:2511.12786) -- an Ising Network of Opinion Formation (INOF/GINOF) model of
+  "elite vs. crowd" influence, applied to Newman's scientific-collaboration co-authorship
+  network. No real election, no real geography, no vote data of any kind -- a
+  co-authorship network standing in for a generic influence structure. Not a collision.
+- Xu, Chen, Zhou & Wang, "Phase transitions in voting simulated by an intelligent Ising
+  model," *Commun. Theor. Phys.* 78, 055601 (2026) -- adds nonlinear instantaneous
+  feedback of the overall magnetization to the conventional Ising model and studies the
+  resulting phase transitions analytically and via Monte Carlo, explicitly "in all
+  dimensions" (i.e. generic lattices). No real country, no real election data, and no
+  real geographic network anywhere in the abstract or highlights -- a theoretical
+  extension of the Ising model that uses "voting" only as motivating vocabulary. Not a
+  collision, but close enough on title vocabulary (Ising + voting + phase transition,
+  2026) to be worth a differentiating footnote if a referee raises it.
+- Baldassarri, Jacquier & Zocca, "Metastable opinion dynamics with hidden preferences: an
+  Ising model with neutral agents" (arXiv:2601.05714) -- a rigorous probabilistic-methods
+  paper (isoperimetric inequalities for polyominoes on a torus) analyzing metastability on
+  highly symmetric synthetic grid networks. No real election, no real geography. Not a
+  collision.
+- Campbell & Ackland, "A computational model of spatial politics: Hotelling-Downs model as
+  statistical physics," *PLOS ONE* 21(6), e0352242 (2026) -- explicitly frames party
+  competition as statistical physics and uses Metropolis Monte Carlo, but the "spins" are
+  continuous party positions in a 1D/2D abstract ideological-issue space (a Hotelling-Downs
+  positioning game), not discrete binary spins on a real geographic adjacency network, and
+  it is not fit to any real country's election results. Fundamentally different model
+  class (continuous positional dynamics vs. this paper's discrete real-geography spin
+  ablation). Not a collision, but the closest-sounding title (statistical physics +
+  elections + PLOS ONE + 2026) found in this re-check, worth being aware of.
+
+**Verdict: still CLEAN across all three claims.** No paper found combines an Ising/spin
+Monte Carlo model, a real geographic border-adjacency network, and real election results
+with anything resembling this paper's ablation, cross-scale comparison, or two-field/GAM
+covariate search. The four new 2026 papers above are genuinely new prior art in the
+broader "Ising models applied to voting/opinion" space but none touch the narrow surviving
+corner this paper occupies -- consistent with the pattern established in §1/§2b/§2c that
+this corner (real country, real geographic adjacency, real election results, literal MC
+simulation) stays open even as the broader Ising-sociophysics-of-opinion space gets more
+crowded every few months.
+
 ## 3. Adjacent prior art — references, not collisions
 
 | Work | DOI / ID | Relationship |
@@ -249,8 +325,14 @@ off-topic results as more probative than the sparse-match pattern actually suppo
 | Godoy-Lorite & Jones, "Inference and Influence of Large-Scale Social Networks Using Snapshot Population Behaviour without Network Data" (2020) | arXiv:2003.07146 | Found 2026-08-18 (§2b); filed in Zotero 2026-08-19 (item `CJICD2I5`, tagged `IsingCR-novelty-check`, not cited in the manuscript); converted to Markdown 2026-08-19 (`papers_md/godoylorite2020/`, see `CONVERSION_NOTES.md`). Spin-based behavioral model explicitly using "social temperature" language, fit to the EU Referendum and two London Mayoral elections. Network is *inferred* from behavioral snapshots, not a real geographic adjacency network; compares election *types*, not spatial *resolutions* of the same election. Close on vocabulary, not on method or question. Not a collision, but close enough on terminology that a Physica A referee could ask about it — worth a short differentiating mention if reviewer feedback raises it. |
 | Okamoto, "Maximizing gerrymandering through Ising model optimization," *Sci. Rep.* (2021) | 10.1038/s41598-021-03050-z | Found 2026-08-18 (§2b); filed in Zotero 2026-08-19 (item `ICQ37ZIC`, tagged `IsingCR-novelty-check`, not cited in the manuscript); converted to Markdown 2026-08-19 (`papers_md/okamoto2021/`, see `CONVERSION_NOTES.md`). Ising-model combinatorial optimization to construct maximally gerrymandered districts on a synthetic 70-cell grid — a districting-*design* question on synthetic data, not a real-network fit to real results. Not a collision. |
 | Elías Chavarría-Mora, "Una mirada cantonal mediante estadística espacial al efecto del desarrollo humano sobre el apoyo electoral en la segunda ronda de la elección presidencial de 2018" (2022) | — (found via Exa; not in Crossref/OpenAlex/S2) | **Direct system-level precedent, different method.** Canton-level spatial statistics (not Ising/physics) on the *same* 2018 Costa Rican runoff this project models. Must be cited; may help explain this project's own open finding that 2018 behaves differently from 2022/2026 (see IsingCR `README.md`/`CLAUDE.md` "Current state"). |
-| "PARTIDOS CON O SIN BASE TERRITORIAL EN COSTA RICA: ANÁLISIS DE LA DISTRIBUCIÓN GEOGRÁFICA DE LOS APOYOS PARTIDARIOS 1998 AL 2022" | — (found via Exa) | Political-science (not physics) analysis of the *same* multi-election geographic territory this project spans (1998–2022 ⊃ our 2018/2022/2026). Confirms PAC (2018's winner) has a documented urban/Gran Área Metropolitana-concentrated support base unlike PLN's consolidated national territorial base (per WebSearch summary of secondary sources) — a plausible political-science lead for *why* 2018's geography-vs-baseline result differs from 2022/2026's. Must cite; worth following up as a substantive explanation, not just a novelty reference. |
+| "PARTIDOS CON O SIN BASE TERRITORIAL EN COSTA RICA: ANÁLISIS DE LA DISTRIBUCIÓN GEOGRÁFICA DE LOS APOYOS PARTIDARIOS 1998 AL 2022," *GEOgraphia* 27(58) (2025) | 10.22409/GEOgraphia2025.v27i58.a66944 (DOI found 2026-08-25, §2d) | Political-science (not physics) analysis of the *same* multi-election geographic territory this project spans (1998–2022 ⊃ our 2018/2022/2026). Confirms PAC (2018's winner) has a documented urban/Gran Área Metropolitana-concentrated support base unlike PLN's consolidated national territorial base (per WebSearch summary of secondary sources) — a plausible political-science lead for *why* 2018's geography-vs-baseline result differs from 2022/2026's. Must cite; worth following up as a substantive explanation, not just a novelty reference. |
 | Bizyaeva, Franci & Leonard, "Nonlinear Opinion Dynamics With Tunable Sensitivity," *IEEE Trans. Autom. Control* (2022) | 10.1109/tac.2022.3159527 (arXiv:2009.04332) | Found 2026-08-22 (§2c, short-query re-check). A continuous-time multi-option opinion-dynamics model on a network that genuinely produces multistable agreement/disagreement, tunable sensitivity, and opinion cascades -- vocabulary directly adjacent to this paper's multistability/counterfactual/cascade diagnostics (Sections 4.9-4.11). But it is a control-theory formalism (nonlinear ODEs with saturating exchange, not an Ising/spin Monte Carlo model), tested on no real election data, and with no geographic adjacency network -- not a collision, but close enough on the diagnostic vocabulary that a referee could ask about it. |
+| Liu, "Opinion Formation at Ising Social Networks," *Information* (MDPI) 17(1), 41 (2026) | arXiv:2511.12786 | Found 2026-08-25 (§2d). Ising Network of Opinion Formation (INOF/GINOF) model of "elite vs. crowd" influence, applied to Newman's scientific-collaboration co-authorship network. No real election, no real geography, no vote data. Not a collision. |
+| Xu, Chen, Zhou & Wang, "Phase transitions in voting simulated by an intelligent Ising model," *Commun. Theor. Phys.* 78, 055601 (2026) | 10.1088/1572-9494/ae3d16 | Found 2026-08-25 (§2d). Adds nonlinear instantaneous magnetization feedback to the conventional Ising model, studied analytically and via MC "in all dimensions" (generic lattices). No real country, election, or geographic network -- "voting" is motivating vocabulary only. Not a collision, but close on title terms (Ising + voting + phase transition, 2026) -- worth a differentiating footnote if a referee raises it. |
+| Baldassarri, Jacquier & Zocca, "Metastable opinion dynamics with hidden preferences: an Ising model with neutral agents" | arXiv:2601.05714 | Found 2026-08-25 (§2d). Rigorous probabilistic-methods paper (isoperimetric inequalities for polyominoes on a torus) on synthetic grid networks. No real election, no real geography. Not a collision. |
+| Campbell & Ackland, "A computational model of spatial politics: Hotelling-Downs model as statistical physics," *PLOS ONE* 21(6), e0352242 (2026) | 10.1371/journal.pone.0352242 | Found 2026-08-25 (§2d). Frames party competition as statistical physics with Metropolis Monte Carlo, but "spins" are continuous party positions in an abstract 1D/2D ideological space (Hotelling-Downs), not discrete spins on a real geographic network, and not fit to any real country's results. Not a collision -- fundamentally different model class -- but the closest-sounding title (statistical physics + elections + PLOS ONE + 2026) found this round. |
+| Mora Cordero, "Utilización de ciencias de datos en análisis de resultados electorales: un ejemplo aplicado a los resultados de la segunda ronda electoral del 2018 en Costa Rica," *Revista TSE* 36 | — (found via Exa; TSE institutional journal, not in Crossref/OpenAlex/S2) | Found 2026-08-25 (§2d). K-means clustering of the *same* 2018 Costa Rican runoff at distrito level, combined with the *same* MIDEPLAN social-development index this paper uses as its $h^{soc}$ field (Section~2.4) -- a genuinely close **data** precedent (same TSE + MIDEPLAN combination, same election, same distrito granularity). Not a collision on method (unsupervised clustering/visualization, no Ising/spin model, no network, no ablation, explicitly disclaims predictive intent) but close enough on data sourcing to be worth a citation if the MIDEPLAN section discusses precedent for this specific data combination. |
+| Cascante Campos, "Costa Rican electoral geography: counterfactual analysis of possible effects of alternative provincial divisions on legislative political representation (2002-2022)," *Revista Geográfica de América Central* 74(1) (2025) | 10.15359/rgac.74-1.8 | Found 2026-08-25 (§2d). Counterfactual redistricting analysis (7 vs. 9 provinces) on Costa Rican legislative elections -- political geography, not physics; province-level, not canton/distrito. Not a collision. |
 
 ## 4. Alternatives checked and not pursued further here
 
@@ -263,10 +345,13 @@ before starting. No prior seed of this idea existed in `lit-gap-toolkit/SEED_GRA
 - **Before drafting:** re-run §2's queries plus a fresh Exa sweep regardless of the CLEAN
   verdict — papers move fast in this niche (3 of 8 adjacent-prior-art rows above are
   2025/2026 publications found during a single check).
-- **Before submission:** same as above, plus check whether `korbel2026`'s TABLE III
-  (per-decade fitted T*/hc/accuracy, lost in the Mode A conversion — see
-  `papers_md/CONVERSION_NOTES.md`) needs a Mode B re-run if its numbers end up cited
-  directly.
+- **Before submission:** ~~same as above, plus check whether `korbel2026`'s TABLE III...~~
+  — pre-submission re-check done 2026-08-25, see §2d (CLEAN across all three claims; 6 new
+  2026 adjacent references found and added to §3, none a collision). `korbel2026`'s TABLE
+  III Mode B re-run is still open if its numbers end up cited directly (not yet needed —
+  the manuscript cites Korbel's dataset span and validation approach, not per-decade
+  fitted values). Re-run the full corner again immediately before the actual submission
+  click if more than a few days elapse from 2026-08-25.
 - **If scope expands to distrito-level (492 nodes) or to other countries:** ~~re-run the
   corner queries at that finer/broader scope~~ — done 2026-08-18, see §2b (CLEAN, distrito
   scope specifically covered). Re-run again if scope expands further (e.g. a third
