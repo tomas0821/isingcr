@@ -1,18 +1,23 @@
 # NOVELTY_CHECK — Ising-model sociophysics of Costa Rican electoral geography
 
-**Status as of 2026-08-25: CLEAN, pre-submission re-check complete.** All
-close papers read in full, including Tiwari, Yang & Sen (2021, §3) and Massoli (2026,
-§2c). The original 2026-08-16 check was scoped to canton-level framing only; §2b
-(2026-08-18) extended to distrito/cross-scale scope; §2c (2026-08-22) extended again to
-the manuscript's second contribution (the two-field Hamiltonian and the GAM covariate
-search); §2d (2026-08-25) is the pre-submission re-run across all three claims -- still
-CLEAN, no collision found, Massoli (2026) remains the closest adjacent work and still
-differs on network construction, field structure, dynamics, and domain. Several new
-2026 Ising-and-elections/voting papers surfaced (§2d, §3) but none use a real
-geographic adjacency network fit to real election results. Re-run again immediately
-before the actual submission click if more than a few days elapse -- this niche moves
-fast (3 of 8 adjacent papers found in the original check were 2025/2026 publications in
-a single check; §2d found 4 more new 2026 publications in one afternoon).
+**Status as of 2026-08-29: CLEAN, including the new coupling-network-regionalization
+material.** All close papers read in full, including Tiwari, Yang & Sen (2021, §3) and
+Massoli (2026, §2c). The original 2026-08-16 check was scoped to canton-level framing
+only; §2b (2026-08-18) extended to distrito/cross-scale scope; §2c (2026-08-22) extended
+again to the two-field Hamiltonian and the GAM covariate search; §2d (2026-08-25) was a
+pre-submission re-run across all three claims; §2e (2026-08-29) covers the new
+community-detection/network-topology material added since §2d -- still CLEAN, but this
+was the closest call yet: two real, close methodological neighbors (Elmakais & Glickman
+2026 on Israeli cantons; Michaud et al. 2021 on Sweden) both do community detection on
+real election municipalities, differing specifically in that they cluster on
+vote-similarity while this paper clusters on geography alone with vote data excluded --
+both added directly to the manuscript as differentiating citations rather than left for
+a referee to find. Massoli (2026) remains the closest adjacent work for the two-field/GAM
+claim specifically. Re-run again immediately before the actual submission click if more
+than a few days elapse -- this niche moves fast (3 of 8 adjacent papers found in the
+original check were 2025/2026 publications in a single check; §2d found 4 more new 2026
+publications in one afternoon; §2e found 2 more, one of them the closest-yet
+methodological neighbor, in a single afternoon).
 
 All 16 references in §3 are filed in Zotero under Sociophysics ▸ IsingCR (added
 2026-08-16 via the Zotero Web API, tagged `IsingCR-novelty-check`), all 16 PDFs attached
@@ -311,6 +316,82 @@ this corner (real country, real geographic adjacency, real election results, lit
 simulation) stays open even as the broader Ising-sociophysics-of-opinion space gets more
 crowded every few months.
 
+## 2e. Coupling-network regionalization / community-detection re-check (2026-08-29)
+
+Between §2d (2026-08-25) and this check, the manuscript gained new material not covered
+by any prior novelty pass: Louvain community detection on $J_{ij}$ alone (no vote data),
+compared against provinces and GAM/periphery, at both canton and distrito resolution
+(Section~2.2/Figures 5-6), plus several purely-topological robustness checks (betweenness
+centrality, weighted degree, community-boundary status vs. per-node prediction error).
+The claim being defended here, additional to §1/§2b/§2c: **running community detection on
+a real country's geographic coupling network alone, with no vote or political data used
+in the clustering step, then comparing the result post-hoc against administrative and
+political categories, is not yet published for a real-election Ising/spin-model context.**
+Falsified by a paper that does the same combination: community/module detection on a real
+geographic adjacency network (no political data as clustering input) compared against
+real administrative or political partitions, in service of an Ising/spin electoral model.
+
+Queries run (same short-query FastTrack pattern as §2d, plus a fresh Exa sweep specifically
+targeting the new material): `"Ising model election geography adjacency network"`,
+`"Ising model capital region election geography"` (both re-run, same off-field pattern as
+§2d, no new collision), `"Ising model election spatial network Costa Rica"` (0 hits),
+OpenAlex direct (`"Ising model election geographic network spatial resolution"`,
+2026-08-20 onward, 0 hits), and an Exa sweep (`"Ising model geographic adjacency network
+election Monte Carlo simulation community detection 2026"`).
+
+**A real, close methodological neighbor surfaced -- read and differentiated, not a
+collision.** Elmakais & Glickman, "Partitioning Israeli Municipalities into Politically
+Homogeneous Cantons: A Constrained Spatial Clustering Approach" (arXiv:2603.11805, 2026)
+-- found via Exa, read in full via the arXiv HTML page. Uses Louvain (among three other
+clustering algorithms: Simulated Annealing, Agglomerative, K-Means) on 229 Israeli
+municipalities to construct politically homogeneous, geographically contiguous voting
+districts. Critically different on the input to the clustering step: their Louvain edge
+weights are *political-similarity* distances between municipalities' vote-share vectors
+($w(u,v)=1-d(u,v)/d_{\max}$, using BlocShares/RawParty/PCA/NMF feature representations) --
+vote data is the clustering objective, not excluded from it -- and the stated goal is
+districting/redistricting design, not characterizing a real-election Ising model's own
+coupling network. The paper's own methodological aside is worth noting directly: it flags
+that Louvain's near-perfect cross-election stability (ARI = 1.0) "reflects algorithmic
+insensitivity to small feature-space variations rather than an independent confirmation of
+geographic structure" -- an observation of the same kind already added to this paper's own
+Limitations (Section~4, fifth item) about Louvain's resolution/seed sensitivity, independently
+corroborating that caveat's importance. Not a collision: different country, different
+clustering input (political similarity vs. pure geography), different research question
+(district design vs. characterizing an existing Ising model's network), and no Ising/spin
+Monte Carlo model anywhere in their paper. Added to the manuscript itself as a
+differentiating citation (Section~2.2) since it is close enough on vocabulary (Louvain +
+municipalities + elections) that a referee could plausibly ask about it.
+
+**A second, also real, also differentiated neighbor.** Michaud, M\"akinen, Szilva & Frisk,
+"A spatial analysis of parliamentary elections in Sweden 1985-2018" (*Applied Network
+Science* 6, 67 (2021), doi:10.1007/s41109-021-00409-z) -- found via the same Exa sweep,
+read via the paper's own abstract/methods description in the search result (not the full
+PDF, which required institutional access this sandbox does not have; the description below
+rests on the abstract, methods summary, and literature-review passages returned by the
+search, which is enough to characterize the method and rule out a collision, but a full
+read is recommended before citing any specific numeric result from it, which this
+manuscript does not). Groups Swedish municipalities into "politico-cultural communities"
+using community detection on the Bhattacharyya-coefficient similarity of their *voting
+profiles* -- again vote data as the clustering input, not pure geography -- finding 3-4
+stable communities over 1985-2018. The paper's own literature review names a further small
+genre doing the same kind of thing (Fern\'andez-Gracia \& Lacasa 2018 on Spanish
+elections; Maulana \& Situngkir 2015 on German elections) -- neither independently
+verified in this check (found only via Michaud et al.'s citation of them, not read
+directly), so neither is added to this paper's own bibliography, but their existence
+confirms "community detection on real election vote-similarity data" is a small,
+real, recognized sub-literature distinct from what Section~2.2 does. Added to the
+manuscript as a second differentiating citation alongside Elmakais \& Glickman.
+
+**Verdict: still CLEAN.** No paper found running community/module detection on a real
+country's geographic coupling network *with vote data excluded from the clustering
+step*, compared post-hoc against administrative/political categories, for an Ising/spin
+electoral model. The closest neighbors both cluster directly on vote/political
+similarity -- a related but distinct question (do voting patterns imply communities?
+vs. this paper's does geography alone, ignorant of votes, imply structure a political
+category later turns out to resemble?) -- and neither uses an Ising/spin Monte Carlo
+model. Both differentiating citations were added directly to the manuscript
+(Section~2.2) rather than left for a referee to ask about first.
+
 ## 3. Adjacent prior art — references, not collisions
 
 | Work | DOI / ID | Relationship |
@@ -333,6 +414,8 @@ crowded every few months.
 | Campbell & Ackland, "A computational model of spatial politics: Hotelling-Downs model as statistical physics," *PLOS ONE* 21(6), e0352242 (2026) | 10.1371/journal.pone.0352242 | Found 2026-08-25 (§2d). Frames party competition as statistical physics with Metropolis Monte Carlo, but "spins" are continuous party positions in an abstract 1D/2D ideological space (Hotelling-Downs), not discrete spins on a real geographic network, and not fit to any real country's results. Not a collision -- fundamentally different model class -- but the closest-sounding title (statistical physics + elections + PLOS ONE + 2026) found this round. |
 | Mora Cordero, "Utilización de ciencias de datos en análisis de resultados electorales: un ejemplo aplicado a los resultados de la segunda ronda electoral del 2018 en Costa Rica," *Revista TSE* 36 | — (found via Exa; TSE institutional journal, not in Crossref/OpenAlex/S2) | Found 2026-08-25 (§2d). K-means clustering of the *same* 2018 Costa Rican runoff at distrito level, combined with the *same* MIDEPLAN social-development index this paper uses as its $h^{soc}$ field (Section~2.4) -- a genuinely close **data** precedent (same TSE + MIDEPLAN combination, same election, same distrito granularity). Not a collision on method (unsupervised clustering/visualization, no Ising/spin model, no network, no ablation, explicitly disclaims predictive intent) but close enough on data sourcing to be worth a citation if the MIDEPLAN section discusses precedent for this specific data combination. |
 | Cascante Campos, "Costa Rican electoral geography: counterfactual analysis of possible effects of alternative provincial divisions on legislative political representation (2002-2022)," *Revista Geográfica de América Central* 74(1) (2025) | 10.15359/rgac.74-1.8 | Found 2026-08-25 (§2d). Counterfactual redistricting analysis (7 vs. 9 provinces) on Costa Rican legislative elections -- political geography, not physics; province-level, not canton/distrito. Not a collision. |
+| Elmakais & Glickman, "Partitioning Israeli Municipalities into Politically Homogeneous Cantons: A Constrained Spatial Clustering Approach" (2026) | arXiv:2603.11805 | Found 2026-08-29 (§2e); read in full via arXiv HTML. **Closest methodological neighbor to this paper's new community-detection material.** Louvain (among 3 other algorithms) on 229 Israeli municipalities, but edge weights are *political-similarity* distances between vote-share vectors -- vote data is the clustering objective, not excluded from it, and the goal is districting design, not characterizing an Ising model's own network. No Ising/spin model. Cited directly in the manuscript (Section~2.2) as a differentiating reference. |
+| Michaud, Mäkinen, Szilva & Frisk, "A spatial analysis of parliamentary elections in Sweden 1985-2018," *Applied Network Science* 6, 67 (2021) | 10.1007/s41109-021-00409-z | Found 2026-08-29 (§2e); characterized from the paper's own abstract/methods summary (full PDF not accessible in this sandbox). Community detection on Bhattacharyya-similarity of Swedish municipalities' *voting profiles* -- again vote data as the clustering input, not pure geography. No Ising/spin model, no real geographic adjacency network as the clustering basis. Cites a further small genre doing the same kind of vote-similarity community detection (Fernández-Gracia & Lacasa 2018 on Spain; Maulana & Situngkir 2015 on Germany) -- neither independently verified here, so neither added to this paper's bibliography, but their existence (via Michaud et al.'s citation) confirms this is a small, recognized, and distinct sub-literature from Section~2.2's geography-only approach. Cited directly in the manuscript as a second differentiating reference. |
 
 ## 4. Alternatives checked and not pursued further here
 
