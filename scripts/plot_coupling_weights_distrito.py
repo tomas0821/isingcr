@@ -2,8 +2,10 @@
 """Map the distrito-level coupling network J_ij (border-length-weighted).
 
 Companion to plot_coupling_weights.py (canton level). Highlights the same
-kind of structure one administrative level down (N=492, 1350 edges) --
-the highest-degree nodes, the near-tripoint weak-coupling cluster -- plus
+kind of structure one administrative level down, on the same N=488
+electoral distrito network used throughout the paper's second-contribution
+analyses -- the highest-degree nodes, the near-tripoint weak-coupling
+cluster -- plus
 the headline cross-scale finding: Puerto Jimenez, the canton-level
 network's most isolated node (degree 1), has exactly one distrito, whose
 edge to Bahia Drake is one of the STRONGEST couplings in the entire
@@ -17,11 +19,14 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 import matplotlib.pyplot as plt
+import networkx as nx
 import numpy as np
 from matplotlib.colors import LogNorm
 from matplotlib.patches import Rectangle
 
+sys.path.insert(0, str(ROOT / "scripts"))
 from isingcr.ingestion import build_adjacency_graph, load_shapefile, normalize_distrito_code
+from run_3d_scan import build_distrito_graph_and_fields
 
 DATA_RAW = ROOT / "data" / "raw"
 OUT = ROOT / "manuscript" / "figures" / "coupling_weights_distrito.png"
@@ -29,16 +34,35 @@ OUT = ROOT / "manuscript" / "figures" / "coupling_weights_distrito.png"
 SHAPEFILE_PATH = DATA_RAW / "boundaries" / "extracted" / "cri_admin3.shp"
 PROVINCE_COL, CANTON_COL, DISTRITO_COL = "adm1_name", "adm2_name", "adm3_name"
 
-HUBS = ["ALAJUELA|SARCHI|TORO AMARILLO", "HEREDIA|CENTRAL|VARABLANCA"]
 PJ = "PUNTARENAS|PUERTO JIMENEZ|PUERTO JIMENEZ"
 DRAKE = "PUNTARENAS|OSA|BAHIA DRAKE"
+
+# Restrict to the exact N=488 electoral distrito network used everywhere else
+# in the paper (not just the 2 isolated islands -- also the 2 electorally
+# unmatched name-variant distritos build_electoral_graph drops).
+_, _, _, model_nodes, _ = build_distrito_graph_and_fields()
+model_node_set = set(model_nodes)
+print(f"Restricting to the N={len(model_node_set)} model network node set.")
 
 gdf = load_shapefile(SHAPEFILE_PATH, id_col=DISTRITO_COL)
 gdf["code"] = [normalize_distrito_code(p, c, d)
                for p, c, d in zip(gdf[PROVINCE_COL], gdf[CANTON_COL], gdf[DISTRITO_COL])]
 G = build_adjacency_graph(gdf, id_col="code", weight_by="border_length")
+G = G.subgraph([n for n in G.nodes if n in model_node_set]).copy()
+iso = list(nx.isolates(G))
+G.remove_nodes_from(iso)
+print(f"Graph after restriction: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
+
+# Hubs: report the actual top-degree node(s) on this graph rather than a
+# fixed hardcoded pair, since which nodes tie at the top can change with
+# the exact node set.
+degree_sorted = sorted(G.degree(), key=lambda x: -x[1])
+top_degree = degree_sorted[0][1]
+HUBS = [n for n, d in degree_sorted if d == top_degree]
+print(f"Top-degree node(s) (degree {top_degree}): {HUBS}")
 
 gdf = gdf.set_index("code")
+gdf = gdf.loc[list(G.nodes)]
 centroids = {code: (geom.centroid.x, geom.centroid.y) for code, geom in gdf.geometry.items()}
 
 edges = [(u, v, d["weight"]) for u, v, d in G.edges(data=True)]
@@ -90,8 +114,9 @@ ax.annotate("Puerto Jiménez\n(canton: 1 neighbor)\ndistrito edge to Bahía\nDra
 for h in HUBS:
     hx, hy = centroids[h]
     ax.scatter([hx], [hy], s=140, facecolor="none", edgecolor="tab:red", linewidth=2.0, zorder=5)
+hub_names = ", ".join(h.split("|")[-1].title() for h in HUBS)
 ax.scatter([], [], s=140, facecolor="none", edgecolor="tab:red", linewidth=2.0,
-           label=f"Highest degree (12): Toro Amarillo, Varablanca")
+           label=f"Highest degree ({top_degree}): {hub_names}")
 
 ax.set_axis_off()
 ax.set_aspect("equal")

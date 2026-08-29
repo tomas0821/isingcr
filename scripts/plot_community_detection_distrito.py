@@ -18,7 +18,9 @@ import networkx as nx
 import numpy as np
 from scipy.stats import entropy
 
+sys.path.insert(0, str(ROOT / "scripts"))
 from isingcr.ingestion import build_adjacency_graph, load_shapefile, normalize_distrito_code
+from run_3d_scan import build_distrito_graph_and_fields
 
 DATA_RAW = ROOT / "data" / "raw"
 OUT = ROOT / "manuscript" / "figures" / "community_detection_distrito.png"
@@ -60,12 +62,21 @@ def nmi(labels_a, labels_b):
     return mi / np.sqrt(hx * hy) if hx > 0 and hy > 0 else float("nan")
 
 
+# Restrict to the exact N=488 electoral distrito network used everywhere else
+# in the paper's second-contribution analyses (2 isolated islands AND the 2
+# electorally-unmatched name-variant distritos dropped, not just isolates).
+_, _, _, model_nodes, _ = build_distrito_graph_and_fields()
+model_node_set = set(model_nodes)
+print(f"Restricting to the N={len(model_node_set)} model network node set.")
+
 gdf = load_shapefile(SHAPEFILE_PATH, id_col=DISTRITO_COL)
 gdf["code"] = [normalize_distrito_code(p, c, d)
                for p, c, d in zip(gdf[PROVINCE_COL], gdf[CANTON_COL], gdf[DISTRITO_COL])]
 G = build_adjacency_graph(gdf, id_col="code", weight_by="border_length")
+G = G.subgraph([n for n in G.nodes if n in model_node_set]).copy()
 iso = list(nx.isolates(G))
 G.remove_nodes_from(iso)
+print(f"Graph after restriction: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
 
 comms = nx.algorithms.community.louvain_communities(G, weight="weight", seed=42, resolution=1.0)
 modularity = nx.algorithms.community.modularity(G, comms, weight="weight")
