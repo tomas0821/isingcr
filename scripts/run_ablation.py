@@ -133,6 +133,18 @@ def main():
     print(f"\nMarginal contribution of predisposition (h) over pure geography: "
           f"{gap:+.1%}")
 
+    results_dir = FIGURES_DIR.parent / "data" / "processed"
+    results_dir.mkdir(exist_ok=True, parents=True)
+    np.savez(results_dir / "ablation.npz",
+             temperatures=TEMPERATURES,
+             accuracy_a=run_a["accuracy"], accuracy_a_std=run_a["accuracy_std"],
+             chi_a=run_a["chi"], C_a=run_a["C"],
+             accuracy_b=run_b["accuracy"], accuracy_b_std=run_b["accuracy_std"],
+             chi_b=run_b["chi"], C_b=run_b["C"],
+             baseline=baseline, N=run_a["N"],
+             n_equil=N_EQUIL, n_sweeps=N_SWEEPS, n_seeds=N_SEEDS)
+    print(f"Raw curves written to {results_dir / 'ablation.npz'}")
+
     plot(run_a, run_b, baseline)
     print(f"\nFigure written to {FIGURES_DIR / 'ablation.png'}")
 
