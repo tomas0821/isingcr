@@ -392,6 +392,251 @@ category later turns out to resemble?) -- and neither uses an Ising/spin Monte C
 model. Both differentiating citations were added directly to the manuscript
 (Section~2.2) rather than left for a referee to ask about first.
 
+## 2f. Criticality-absence synthesis and field-to-coupling ratio re-check (2026-09-02)
+
+Between §2e (2026-08-29) and this check, the Abstract and Conclusion gained two headline
+claims that no prior pass had covered as *claims* (the underlying diagnostics were covered
+individually in §2c, but not their joint interpretation, and the $\lambda$-scan is new):
+
+- **Claim A -- "no signature of criticality / field-pinned equilibrium".** Three diagnostics
+  that were previously reported separately -- no Binder-cumulant crossing across the two real
+  system sizes ($N=84$ / $N=488$), $\leq 10.9\%$ of distritos moving when the fitted 2026
+  system is re-solved across $T=0.05$--$5.0$, and zero downstream change in 8/10 single-node
+  field-flip cascade tests -- are now read jointly as a non-critical, field-pinned equilibrium
+  that absorbs local perturbations ("not a system near a tipping point"). Falsified by a paper
+  that combines finite-size scaling and/or perturbation tests on a spin model fitted to a real
+  election on a real geographic network and draws a far-from-criticality conclusion about that
+  electorate.
+- **Claim B -- "field-to-coupling ratio of a geographic covariate / predisposition is
+  geography under another name".** Scanning the weight $\lambda$ of the binary GAM field
+  ($h=\pm1$, mean $J=1$) gives a finite optimum $\lambda^*\approx1.5$ (field carrying $37\%$
+  of equilibrium energy) with accuracy saturating at the field's own structural ceiling
+  ($80.9\%$), whereas the circular own-margin field climbs monotonically toward $\sim100\%$ --
+  used as a peak-vs-saturation diagnostic separating a genuine predisposition field from a
+  label leak. Falsified by (a) a reported optimal field-to-coupling ratio for a real
+  geographic/urban-rural covariate in an Ising election model, or (b) prior use of
+  field-weight scaling shape as a circularity diagnostic.
+
+**Tooling note.** The `scholar-search` OpenAlex/arXiv lanes returned empty result sets on
+every query this session (nine queries, including trivially broad ones such as `"Ising model
+election Binder cumulant"`) -- treated as a server fault, not evidence. Coverage came from
+FastTrack (`search_papers` $\times$ 14, `run_duplication_test` $\times$ 2), Exa ($\times$ 6),
+WebSearch ($\times$ 4), and direct fetches of every candidate's abstract/HTML page.
+
+Queries run (FastTrack unless noted): `"Ising model election finite-size scaling Binder
+cumulant real data"` (16 hits, all synthetic-lattice or spin-glass FSS -- no real election);
+`"spin model electoral geography critical point absence not near tipping point"` (off-field);
+`"random field Ising election field strength coupling ratio optimal"` (off-field; one 2026
+inference-theory preprint on Ising models on inhomogeneous random graphs, not applied);
+`"urban rural field Ising model vote spatial covariate"` (3 hits, all off-field);
+`"label leakage circular covariate Ising model fit"` (2 hits, off-field); `"field-pinned
+equilibrium social system Ising external field"` (off-field: RFIM on scale-free networks,
+hysteresis in bilayers); `"opinion dynamics cascade single node perturbation real network
+election"` (Bizyaeva et al. and Braha & de Aguiar again, both already in §3);
+`"criticality of inferred Ising models maximum entropy fitted to data"` (neuroscience
+maximum-entropy literature; Attanasi et al. 2014 surfaced -- see below); `"Ising model
+elections voting"` restricted to 2025-- (70 hits; screened all, new ones below); `"Ising
+model on clustered networks opinion dynamics"`; `"statistical mechanics territorial dynamics
+municipalities Ising external field socio-economic"` (Massoli again); `run_duplication_test`
+on each claim phrased as a full research question (Claim A: 7 neighbours, all off-field --
+signed-network balance, Q-voter ML prediction, three dissertations; Claim B: zero neighbours,
+FastTrack's own over-specification caveat, re-run as short queries above). Exa: `"fitting
+an Ising spin model to real election results on a geographic adjacency network and
+concluding the electorate is far from a critical point"`, `"Ising election model with
+external field from a geographic covariate ... optimum ... label leakage"`, `"statistical
+physics paper arguing real elections sit near a critical point or tipping point"`, `"Ising
+model of voting where flipping the external field of a single county ... no cascade ...
+pinned by the field"`, `"urban-rural or capital-region indicator as external field on each
+municipality, field weight relative to neighbor coupling fitted to real vote maps"`, and
+`"diagnostic for circular or label-leaking covariates ... accuracy rises monotonically to
+100% ... peaks at a finite weight for a genuine covariate"`. WebSearch: `"Ising model real
+election data 'no critical point' OR 'far from criticality' ..."`, `"... external field
+strength relative to coupling 'urban' OR 'rural' covariate optimal field weight"`, plus two
+bibliographic look-ups.
+
+### Claim A -- hits considered
+
+The pattern is the mirror image of §2d/§2e: the literature that *does* fit spin/opinion
+models to real elections almost uniformly reports a transition or near-criticality, and the
+one paper that concludes "not critical" does so from time series on a complete graph. Nobody
+reaches the question from real-geography FSS plus perturbation.
+
+- **Korbel, Dahdoul & Thurner (PRL 2026 / arXiv:2510.00612)** -- already §3's closest
+  collision; re-read specifically for this claim via the arXiv HTML. They *report* a
+  polarization transition (critical campaign spending $h_c\approx\$1.83$M) from analytical
+  critical curves in a configuration-model/mean-field approximation
+  ($A_{ij}\approx k_ik_j/(N\langle k\rangle)$). No finite-size scaling, no temperature
+  sweep of a fitted real network, no single-node perturbation test, no spatial adjacency.
+  Their transition is a property of the analytical model's phase diagram, not a measured
+  property of any real district network; the manuscript already contrasts against it
+  (Section~4.9 area). Not a collision.
+- **Biswas & Sen, "Critical noise can make the minority candidate win: The U.S. presidential
+  election cases," *Phys. Rev. E* 96, 032303 (2017), doi:10.1103/PhysRevE.96.032303** --
+  found via Exa; read via the arXiv abstract page (journal reference confirmed there). Argues
+  the *opposite* of Claim A for the US: coarse-graining an opinion-dynamics model (BChS
+  kinetic-exchange / Ising-class) *near its critical noise* yields finite probability of an
+  electoral-college minority win, so the 2016 outcome is read as a near-critical signature.
+  But the model is a generic lattice/mean-field model coarse-grained into synthetic
+  "states"; no real geographic adjacency network, no fitted field, no FSS on real data. A
+  companion preprint (Biswas, Sen et al., arXiv:2411.02240, 2024 battleground states) uses a
+  fully connected graph with poll-derived parameters. Directly relevant as the *contrasting*
+  prior conclusion a referee could raise ("but the Sen group says elections are near
+  criticality") -- differentiated by the absence of any real network and by the fact that
+  their criticality is assumed in the model, not tested against a fitted system.
+- **Chung, Chew & Lai, "Critical Transitions in Public Opinion: A Case Study of American
+  Presidential Election," arXiv:1610.05426 (2016; no journal version found)** -- found via
+  Exa; PDF read in full (text extracted). Zealot + majority-rule + "attractiveness" model on
+  a generic random network of size $N$ / mean degree $k$; calibrated per US state
+  (1980--2012) via a hysteresis loop in Republican vote share vs. a national attractiveness
+  proxy, and a critical-slowing-down early-warning signal detected in the 1991 presidential
+  approval time series. Concludes a critical, irreversible transition *did* occur. No
+  geographic adjacency, no Ising temperature, no finite-size scaling, no single-node
+  perturbation; the "criticality" is temporal (autocorrelation/variance rise in a national
+  poll series), not a property of a spatial equilibrium. Not a collision; a second
+  contrasting-conclusion reference, weaker than Biswas & Sen because unpublished.
+- **Meyer & Metzler, "Time scales in the dynamics of political opinions and the voter
+  model," *New J. Phys.* 26 (2024), doi:10.1088/1367-2630/ad27bc** (article number not
+  verified in this check) -- found via Exa; read via the IOP abstract page. The one paper
+  found that reaches a "not near a critical point" conclusion about real electorates: a
+  voter model with zealots on a *complete graph*, fitted by time-averaged MSD to monthly
+  approval/party-support polls (UK, US, DE, FR, CA, JP), yields equilibrium fluctuations
+  around zealot-pinned stable values with $\sim12$-month exponential relaxation -- i.e. a
+  pinned, non-critical equilibrium. Conceptually the nearest neighbour to Claim A's
+  *conclusion*, but reached from temporal polling data with no spatial structure, no
+  external field, no FSS across system sizes, and no perturbation/cascade test. Their
+  pinning agent is a zealot fraction; ours is a geographic field on a real adjacency
+  network. Not a collision; worth citing as a convergent finding by an unrelated method.
+- **Galam, "Spontaneous Symmetry Breaking, Group Decision Making and Beyond 2: Distorted
+  Polarization and Vulnerability," *Symmetry* 17(11), 1866 (2025), doi:10.3390/sym17111866
+  (arXiv:2509.06649)** -- found via FastTrack's 2025-- sweep; read via the arXiv abstract
+  (MDPI page returned 403). Closest *methodological* neighbour to the single-node field-flip
+  cascade test, and reaching the opposite result: on a synthetic zero-temperature Ising-like
+  system, "as few as two opposed [local] fields, if placed at tipping sites, can redirect
+  the entire system," and a vanishingly small uniform field imposes global order. No real
+  election, no real geography, $T=0$ dynamics from a symmetric random start (not a fitted
+  finite-$T$ equilibrium with a strong quenched field). The difference is exactly the point
+  of Claim A: Galam's system has no pinning field to absorb the perturbation; ours does.
+  Not a collision, but a referee-plausible "hidden tipping sites" objection -- the
+  manuscript's cascade test is the direct answer to it, so a one-line differentiating
+  citation would strengthen rather than weaken the claim.
+- **Attanasi et al., "Finite-Size Scaling as a Way to Probe Near-Criticality in Natural
+  Swarms," *Phys. Rev. Lett.* 113, 238102 (2014), doi:10.1103/PhysRevLett.113.238102** --
+  found via FastTrack; abstract read. The canonical precedent for using FSS across
+  *naturally occurring* system sizes to test near-criticality in a real (non-lattice)
+  system -- on midge swarms, where it finds near-maximal correlation at all sizes. Same
+  instrument as Section~4.7's Binder analysis, opposite outcome, different domain, no
+  election. Methodological precedent only; optional citation for the FSS section.
+- **Mastromatteo & Marsili, "On the criticality of inferred models," *J. Stat. Mech.* (2011)
+  P10012, doi:10.1088/1742-5468/2011/10/P10012; Mora & Bialek, "Are biological systems
+  poised at criticality?" *J. Stat. Phys.* 144, 268--302 (2011), doi:10.1007/s10955-011-0229-4**
+  -- both verified via arXiv abstract pages (1102.1624, 1012.2242). The "inferred Ising
+  models look critical" literature: maximum-likelihood/maximum-entropy inference pushes
+  fitted models toward high-susceptibility regions where they are most distinguishable.
+  Claim A's negative result is *not* in tension with this because the present model is not
+  likelihood-inferred -- $J$ is fixed by geography, $h$ by a covariate, and only $T$ is scanned
+  against alignment -- which is itself a reason the equilibrium can sit away from
+  criticality. Neither paper touches elections; recommended as framing citations if a
+  referee asks why a fitted Ising model would *not* be critical.
+- Also screened and dismissed: Devauchelle, Szymczak & Nowakowski, "Dislike of general
+  opinion makes for tight elections," *Phys. Rev. E* 109, 044106 (2024) (Ising + poll
+  awareness, new 50/50 phase, cross-country size scaling of tightness -- generic lattice, no
+  real network, no field fit); Xu et al. 2026 and Bukina & Shepelyansky 2026 (already §2d);
+  Kawahata, *Entropy* 28, 612 (2026) ("signal cliff" phase transition in large-$N$ opinion
+  data, no election); Ibarrondo, Sanz & Orús, *SN Comput. Sci.* 3, 44 (2022) (Ising/XY
+  ground-state election forecasting as QUBO on a 10-person Twitter graph -- optimisation,
+  not equilibrium physics); Frahm & Shepelyansky, arXiv:2607.15119 (2026; Rayleigh-Jeans
+  "thermodynamic theory of voting" for EU vote distributions -- no network, no field).
+
+**Verdict for Claim A: CLEAN.** No paper combines finite-size scaling across real
+administrative system sizes, a counterfactual temperature sweep of a fitted real-network
+system, and single-node field-flip cascade tests on any real-election spin model, and none
+draws a far-from-criticality conclusion about a real electorate from spatial diagnostics.
+The literature that fits opinion models to real elections (Korbel; Biswas & Sen; Chung et
+al.; Braha & de Aguiar) reports transitions; the one non-critical conclusion (Meyer &
+Metzler) comes from temporal polls on a complete graph. Two contrasting-conclusion
+references (Biswas & Sen 2017; Galam 2025) and one convergent-conclusion reference (Meyer &
+Metzler 2024) are worth adding to the manuscript as differentiating citations; the
+inferred-criticality pair (Mastromatteo & Marsili; Mora & Bialek) is optional framing.
+
+### Claim B -- hits considered
+
+- **Korbel, Dahdoul & Thurner (2026)** -- the only real-data election Ising paper found
+  that reports a *quantitative field-strength threshold relative to coupling*
+  ($h_c\approx\$1.83$M campaign spending, from the analytical critical curve in
+  $(h,T)$). Structurally different from Claim B on every axis that matters: their
+  threshold is the onset of a transition (field *overwhelms* coupling), not an optimum
+  of a fit; their field is per-voter bimodal spending, not a geographic covariate; no
+  urban/rural/capital covariate anywhere; mean-field network. The manuscript already
+  contrasts against it. Not a collision.
+- **Massoli, "Modelling Territorial Dynamics through Statistical Mechanics: An
+  Application to Resident Foreign Population," arXiv:2510.10784 (v2 2026-07-06; stat.ME)**
+  -- found via WebSearch; abstract read. A sibling of the already-cited `massoli2026`
+  (*Social Indicators Research* 183(3), 40): continuous Ising on Italian municipalities,
+  external field = PCA-synthesised socio-economic composite (real covariates), simulated
+  annealing + Langevin + conformal prediction. No election data, no binary geographic
+  field, no scan of field weight against coupling, no accuracy-ceiling argument. The
+  §2c differentiation of `massoli2026` (similarity-based $J$, not border adjacency; single
+  PCA field) carries over unchanged. Not a collision.
+- **Borghesi & Bouchaud (EPJB 2010; already cited as `borghesibouchaud2010`) and
+  Borghesi, Raynal & Bouchaud, *PLoS ONE* 7, e36289 (2012)** -- the "cultural field"
+  precedent: a regional, diffusively correlated field plus town-specific idiosyncratic
+  terms explains logarithmic spatial decay of French (2010) and 11-country (2012) turnout
+  correlations. Field vs. local-interaction decomposition is the same conceptual split as
+  $h$ vs. $J$, but the field is a latent continuous random field inferred from the data,
+  not an observed binary geographic covariate, and there is no field-weight scan, no
+  optimum, and no urban/rural structure. Not a collision; already in the manuscript.
+- **Baldassarri, Gallo, Jacquier & Zocca, "Ising model on clustered networks: A model for
+  opinion dynamics," *Physica A* 623, 128811 (2023), doi:10.1016/j.physa.2023.128811** --
+  found via FastTrack; abstract read. Rigorous phase diagram in $(h,\epsilon)$ -- external
+  field strength vs. inter-community coupling -- for metastability/hitting times on
+  synthetic clustered networks at $\beta\to\infty$. The closest *theoretical* treatment of
+  "how strong must $h$ be relative to $J$ to pin a clustered network," but purely
+  synthetic, no data, no optimum-from-fit. Same-journal adjacent reference; optional.
+- **Tiwari, Yang & Sen (Physica A 2021; already §3)** -- random-field strength as a model
+  input on a synthetic lattice; no covariate, no optimum. Unchanged.
+- **Label-leak / peak-vs-saturation diagnostic.** No physics-literature hit at all across
+  FastTrack, Exa, or WebSearch. The nearest analogue is the ML data-leakage literature
+  surfaced by Exa: Kapoor & Narayanan, "Leakage and the reproducibility crisis in
+  machine-learning-based science," *Patterns* 4, 100804 (2023),
+  doi:10.1016/j.patter.2023.100804 (verified via the DOI in the search record), and
+  Hamdan et al., "Confound-leakage: confound removal in machine learning leads to leakage,"
+  *GigaScience* (2023) (DOI not verified here; arXiv:2210.09232), whose "target-as-confound"
+  framework shows prediction accuracy jumping "from moderate to perfect" when a covariate
+  is the label itself -- the same signature as the own-margin field's monotonic climb to
+  $\sim100\%$, stated for regressions rather than for an Ising field weight. Nobody has
+  used the *shape* of an accuracy-vs-field-weight curve (interior peak at a structural
+  ceiling vs. monotonic saturation) as a circularity test for a spin-model field. If a
+  referee asks for a precedent for the diagnostic, Kapoor & Narayanan is the honest
+  cross-disciplinary anchor; it is optional, not required.
+
+**Verdict for Claim B: CLEAN.** No reported optimal field-to-coupling ratio for a real
+geographic (urban/rural, capital-region) covariate in any Ising election model, and no
+prior use of field-weight-scaling shape as a label-leak diagnostic. The only quantitative
+$h$-vs-$J$ number in the real-election Ising literature is Korbel et al.'s spending
+threshold, which is a transition onset in a mean-field model, not a fit optimum for a
+geographic field.
+
+**Citations recommended for the manuscript from this check (all bibliographic details
+verified as stated above; nothing guessed):**
+1. Biswas & Sen, *Phys. Rev. E* 96, 032303 (2017), doi:10.1103/PhysRevE.96.032303 --
+   contrasting near-critical reading of US elections (Section~4.7 or Conclusion).
+2. Meyer & Metzler, *New J. Phys.* 26 (2024), doi:10.1088/1367-2630/ad27bc -- convergent
+   "pinned, non-critical equilibrium" conclusion by an unrelated (temporal, complete-graph)
+   method (Conclusion, second paragraph).
+3. Galam, *Symmetry* 17(11), 1866 (2025), doi:10.3390/sym17111866 -- "hidden tipping
+   sites" under few-site field perturbation on a synthetic $T=0$ system; the cascade test
+   is the direct real-system counterpart (Section~4.11 area).
+4. Optional framing: Mastromatteo & Marsili, *J. Stat. Mech.* (2011) P10012,
+   doi:10.1088/1742-5468/2011/10/P10012 and Mora & Bialek, *J. Stat. Phys.* 144, 268
+   (2011), doi:10.1007/s10955-011-0229-4 -- why a *non-inferred* Ising model need not sit
+   at criticality; Attanasi et al., *PRL* 113, 238102 (2014),
+   doi:10.1103/PhysRevLett.113.238102 -- FSS on natural system sizes as a criticality
+   probe; Baldassarri et al., *Physica A* 623, 128811 (2023) -- $h$-vs-coupling pinning
+   phase diagram, synthetic.
+5. Not recommended: Chung, Chew & Lai (arXiv only, 2016, no journal version found);
+   Hamdan et al. (DOI unverified); Massoli arXiv:2510.10784 (superseded for this paper's
+   purposes by the already-cited `massoli2026`).
+
 ## 3. Adjacent prior art — references, not collisions
 
 | Work | DOI / ID | Relationship |
@@ -416,6 +661,16 @@ model. Both differentiating citations were added directly to the manuscript
 | Cascante Campos, "Costa Rican electoral geography: counterfactual analysis of possible effects of alternative provincial divisions on legislative political representation (2002-2022)," *Revista Geográfica de América Central* 74(1) (2025) | 10.15359/rgac.74-1.8 | Found 2026-08-25 (§2d). Counterfactual redistricting analysis (7 vs. 9 provinces) on Costa Rican legislative elections -- political geography, not physics; province-level, not canton/distrito. Not a collision. |
 | Elmakais & Glickman, "Partitioning Israeli Municipalities into Politically Homogeneous Cantons: A Constrained Spatial Clustering Approach" (2026) | arXiv:2603.11805 | Found 2026-08-29 (§2e); read in full via arXiv HTML. **Closest methodological neighbor to this paper's new community-detection material.** Louvain (among 3 other algorithms) on 229 Israeli municipalities, but edge weights are *political-similarity* distances between vote-share vectors -- vote data is the clustering objective, not excluded from it, and the goal is districting design, not characterizing an Ising model's own network. No Ising/spin model. Cited directly in the manuscript (Section~2.2) as a differentiating reference. |
 | Michaud, Mäkinen, Szilva & Frisk, "A spatial analysis of parliamentary elections in Sweden 1985-2018," *Applied Network Science* 6, 67 (2021) | 10.1007/s41109-021-00409-z | Found 2026-08-29 (§2e); characterized from the paper's own abstract/methods summary (full PDF not accessible in this sandbox). Community detection on Bhattacharyya-similarity of Swedish municipalities' *voting profiles* -- again vote data as the clustering input, not pure geography. No Ising/spin model, no real geographic adjacency network as the clustering basis. Cites a further small genre doing the same kind of vote-similarity community detection (Fernández-Gracia & Lacasa 2018 on Spain; Maulana & Situngkir 2015 on Germany) -- neither independently verified here, so neither added to this paper's bibliography, but their existence (via Michaud et al.'s citation) confirms this is a small, recognized, and distinct sub-literature from Section~2.2's geography-only approach. Cited directly in the manuscript as a second differentiating reference. |
+| Biswas & Sen, "Critical noise can make the minority candidate win: The U.S. presidential election cases," *Phys. Rev. E* 96, 032303 (2017) | 10.1103/PhysRevE.96.032303 | Found 2026-09-02 (§2f). Argues US elections sit near the critical noise of an Ising-class opinion model, so coarse-graining yields minority wins -- the *contrasting* prior conclusion to Claim A. Synthetic lattice/mean-field coarse-grained into "states"; no real geographic network, no fitted field, no FSS on real data. Not a collision; recommended differentiating citation. |
+| Chung, Chew & Lai, "Critical Transitions in Public Opinion: A Case Study of American Presidential Election" (2016) | arXiv:1610.05426 (no journal version found) | Found 2026-09-02 (§2f); PDF read in full. Zealot + majority-rule + attractiveness model on a generic random network, calibrated per US state via hysteresis in vote share; critical slowing down detected in 1991 approval time series. Temporal criticality claim, no geographic adjacency, no FSS, no perturbation test. Not a collision; not recommended for citation (unpublished). |
+| Meyer & Metzler, "Time scales in the dynamics of political opinions and the voter model," *New J. Phys.* 26 (2024) | 10.1088/1367-2630/ad27bc | Found 2026-09-02 (§2f). Voter model with zealots on a complete graph fitted to monthly polls in six countries; concludes equilibrium fluctuations around zealot-pinned values with ~12-month relaxation -- the one published "not near a critical point" reading of real electorates. Temporal, no spatial structure, no field, no FSS, no cascade test. Not a collision; recommended as a convergent-conclusion citation. |
+| Galam, "Spontaneous Symmetry Breaking, Group Decision Making and Beyond 2: Distorted Polarization and Vulnerability," *Symmetry* 17(11), 1866 (2025) | 10.3390/sym17111866 (arXiv:2509.06649) | Found 2026-09-02 (§2f). Zero-temperature Ising-like system where two opposed local fields at "tipping sites" redirect the whole system -- the opposite outcome to the manuscript's single-node cascade test, on a synthetic unpinned system with no real data. Not a collision; recommended differentiating citation for the cascade test. |
+| Mastromatteo & Marsili, "On the criticality of inferred models," *J. Stat. Mech.* (2011) P10012; Mora & Bialek, "Are biological systems poised at criticality?" *J. Stat. Phys.* 144, 268 (2011) | 10.1088/1742-5468/2011/10/P10012; 10.1007/s10955-011-0229-4 | Found 2026-09-02 (§2f). The "inferred Ising models look critical" literature. No elections. Optional framing: the present model is not likelihood-inferred ($J$ from geography, $h$ from a covariate, $T$ scanned), which is a reason its equilibrium can sit away from criticality. |
+| Attanasi et al., "Finite-Size Scaling as a Way to Probe Near-Criticality in Natural Swarms," *Phys. Rev. Lett.* 113, 238102 (2014) | 10.1103/PhysRevLett.113.238102 | Found 2026-09-02 (§2f). Canonical precedent for FSS across naturally occurring system sizes as a near-criticality probe in a real non-lattice system (midge swarms; finds near-criticality). Same instrument as Section~4.7, opposite outcome, no election. Optional methodological citation. |
+| Baldassarri, Gallo, Jacquier & Zocca, "Ising model on clustered networks: A model for opinion dynamics," *Physica A* 623, 128811 (2023) | 10.1016/j.physa.2023.128811 | Found 2026-09-02 (§2f). Rigorous $(h,\epsilon)$ phase diagram for field strength vs. inter-community coupling on synthetic clustered networks at $\beta\to\infty$ -- closest theoretical treatment of "how strong must $h$ be to pin a clustered network." No data, no optimum-from-fit. Optional same-journal adjacent reference for Claim B. |
+| Massoli, "Modelling Territorial Dynamics through Statistical Mechanics: An Application to Resident Foreign Population" (2025/26) | arXiv:2510.10784 | Found 2026-09-02 (§2f). Sibling of the already-cited `massoli2026`: continuous Ising on Italian municipalities with a PCA socio-economic external field. No election, no binary geographic field, no field-weight scan. §2c's differentiation carries over. Not a collision; not separately cited. |
+| Devauchelle, Szymczak & Nowakowski, "Dislike of general opinion makes for tight elections," *Phys. Rev. E* 109, 044106 (2024) | arXiv:2402.12207 | Found 2026-09-02 (§2f). Ising + poll-awareness term yields a new 50/50 phase with spatial segregation; cross-country observation that electorates >~1M voters have tight elections. Generic lattice, no real network, no field fit. Not a collision. |
+| Kapoor & Narayanan, "Leakage and the reproducibility crisis in machine-learning-based science," *Patterns* 4, 100804 (2023) | 10.1016/j.patter.2023.100804 | Found 2026-09-02 (§2f). ML data-leakage taxonomy; the nearest cross-disciplinary anchor for Claim B's label-leak diagnostic (a label-derived covariate drives accuracy to ~100%). No physics, no spin model, no field-weight scan. Optional. |
 
 ## 4. Alternatives checked and not pursued further here
 
@@ -439,6 +694,12 @@ before starting. No prior seed of this idea existed in `lit-gap-toolkit/SEED_GRA
   corner queries at that finer/broader scope~~ — done 2026-08-18, see §2b (CLEAN, distrito
   scope specifically covered). Re-run again if scope expands further (e.g. a third
   country, or a granularity finer than distrito).
+- **If the Abstract/Conclusion gain new synthesis-level claims:** ~~re-check the joint
+  interpretation, not just the individual diagnostics~~ -- done 2026-09-02, see §2f (CLEAN
+  for both the criticality-absence synthesis and the field-to-coupling-ratio/label-leak
+  diagnostic; three differentiating citations recommended, none yet added to the manuscript).
+  Re-run if the $\lambda$-scan is extended to other fields/elections or the cascade test is
+  scaled up.
 - **If scope expands to a multi-field extension or additional covariates:** ~~re-run the
   corner queries against the two-field Hamiltonian and any new predisposition fields~~ —
   done 2026-08-22, see §2c (CLEAN, MIDEPLAN/political-continuity/GAM covariate search
