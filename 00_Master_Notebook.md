@@ -1164,3 +1164,53 @@ mostly stay contained even when directly triggered. None of this -- the cascade
 question itself, or the finding that it doesn't happen -- has any analog in a vote-
 margin comparison; it required literally re-equilibrating the coupled system under a
 perturbation and observing what does and doesn't move.
+
+### Analysis: GAM lambda_soc scan (optimal field-to-coupling ratio; peak vs. saturation) — 2026-09-02
+
+**Script**: `scripts/run_gam_lambda_scan.py` (SLURM: `scripts/submit_gam_lambda_scan.slurm`, UCR
+`shared`, job 126956, 9 array tasks, ~30 min each, no restarts). **Data**:
+`data/processed/gam_lambda_scan_2026_lam{0..8}.npz` (each saves the 16 best-T final spin
+configurations, so the energy decomposition below needs no re-run). Budget identical to
+every headline run (16 seeds, 20000+20000 sweeps, 32 T in [0.05, 5.0]). Closes the gap the
+Supplementary Material stated explicitly: GAM had only ever been run unweighted (lambda=1).
+
+| lambda_soc | best alignment | T* | McNemar median p | \|E_J\| | \|E_h\| | field share | follows field |
+|---|---|---|---|---|---|---|---|
+| 0.25 | 73.09% ± 4.57% | 1.647 | 3.6e-4 | 1218 | 69 | 0.053 | 78.1% |
+| 0.50 | 76.05% ± 2.33% | 1.168 | 2.7e-4 | 1241 | 198 | 0.138 | 90.7% |
+| 0.75 | 80.06% ± 1.04% | 1.168 | 2.8e-6 | 1245 | 341 | 0.215 | 96.6% |
+| 1.00 | 81.07% ± 0.45% | 1.008 | 4.4e-7 | 1248 | 472 | 0.274 | 98.4% |
+| **1.50** | **81.47% ± 0.20%** | 0.848 | 1.8e-7 | 1251 | 722 | 0.366 | 99.3% |
+| 2.00 | 81.38% ± 0.12% | 0.848 | 2.6e-7 | 1249 | 966 | 0.436 | 99.5% |
+| 3.00 | 81.24% ± 0.26% | 1.647 | 2.9e-7 | 1245 | 1449 | 0.538 | 99.5% |
+| 4.00 | 81.15% ± 0.00% | 0.529 | 4.3e-7 | 1244 | 1944 | 0.610 | 99.8% |
+| 8.00 | 80.97% ± 0.07% | 2.285 | 6.8e-7 | 1235 | 3902 | 0.760 | 100.0% |
+
+(lambda=0 baseline 67.64%. lambda=1 row reproduces `gam_field_2026.npz`'s headline exactly under
+the same seeds -- consistency check passes. "Field share" = |E_h|/(|E_J|+|E_h|) over best-T
+spins; "follows field" = fraction of nodes with s_i = sign(h_GAM_i) up to global Z2.)
+
+**Findings**:
+1. **Finite peak, lambda* = 1.5** -- NOT the monotonic climb the circular own-margin field showed
+   under the same extension (67.64% -> 92.70% toward a 99.8% ceiling). GAM rises to ~81.5%
+   then declines slowly to 80.97% at lambda=8. Since h_GAM = ±1 and mean J = 1, lambda* IS the
+   field-to-coupling ratio: **the capital/periphery divide is worth ~1.5 units of mean
+   neighbor contagion.** At lambda*, the field carries 37% of equilibrium energy, coupling 63%.
+2. **The plateau is GAM's structural ceiling.** 80.9% of distritos sit on the side of the 2026
+   split GAM predicts. By lambda ~1.5 the equilibrium follows the field on >99% of nodes, so
+   accuracy is pinned there; the decline past lambda* is the coupling term losing its ability
+   to fix the remaining ~19%. Genuine-field signature (bounded relationship to the outcome),
+   opposite of a label leak.
+3. **Peak is shallow**: +0.4pp over lambda=1 (~1 sigma); everything in [1, 8] is within 0.5pp
+   of the peak. Headline +13.4pp (at lambda=1) is therefore slightly conservative (+13.8 at
+   lambda*), and the GAM-vs-MIDEPLAN comparison is now controlled for optimization budget in
+   GAM's favor.
+4. T* well-determined on the rising flank (1.65 -> 0.85), ill-determined on the plateau
+   (jumps 0.53-2.29 for lambda >= 3) -- flat in lambda implies nearly flat in T.
+
+**Manuscript**: new paragraph in the GAM section (main.tex), one sentence each in Abstract and
+Conclusion (hierarchy: resolution > field choice > magnitude), full table + discussion in
+supplementary.tex "GAM: lambda_soc scan and population confound detail". Also incidental
+during this run: VPN dropped mid-job and openconnect's vpnc-script left UCR's internal
+nameservers in /mnt/wsl/resolv.conf -- restore `nameserver 172.31.192.1` (or let WSL
+regenerate) before reconnecting, or nothing resolves including the gateway.
