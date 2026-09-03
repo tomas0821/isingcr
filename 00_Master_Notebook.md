@@ -1214,3 +1214,21 @@ supplementary.tex "GAM: lambda_soc scan and population confound detail". Also in
 during this run: VPN dropped mid-job and openconnect's vpnc-script left UCR's internal
 nameservers in /mnt/wsl/resolv.conf -- restore `nameserver 172.31.192.1` (or let WSL
 regenerate) before reconnecting, or nothing resolves including the gateway.
+
+### Note: why GAM does not replicate in 2022 -- the ceiling is the baseline — 2026-09-03
+
+Free computation, no MC (`build_graph_and_gam_field` for both years; sign-agreement ceiling
+= max over global Z2 orientation of the fraction of units with s_emp = sign(h_GAM)):
+
+| year | N | GAM on leading side | periphery on leading side | gap | GAM ceiling | majority baseline | headroom |
+|---|---|---|---|---|---|---|---|
+| 2026 | 488 | 31.7% | 88.7% | 57.0 | 80.9% | 67.01% | **+13.9** |
+| 2022 | 483 | 50.0% | 76.9% | 26.9 | 66.7% | 66.67% | **+0.0** |
+
+In 2022 a ±1 GAM field cannot beat the trivial majority class even in principle -- the capital
+split 50/50 in the runoff, so the side GAM predicts contains exactly the majority-class units and
+nothing more. In 2026 the headroom is 13.9 pt and the observed gain was 13.4 (at lambda=1; 13.8 at
+lambda*). The 2022 non-replication is therefore an arithmetic consequence of the election's
+shape, not evidence GAM stopped organizing the vote. Added as a paragraph in main.tex's GAM
+section and a clause in the Discussion. Consistent with the 2022 GAM run reaching 67.16% ~ its
+own 66.7% ceiling.
