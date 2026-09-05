@@ -1276,3 +1276,30 @@ belongs in GAM), so the proxy's error is concentrated in Alajuela Central, not s
 (3) Caveat: the relabel is chosen because Alajuela failed, so this is a diagnostic/sensitivity
 result, not a new headline; the paper keeps the proxy as published and reports this in the SM CV
 section and the Limitations item.
+
+### Correction: the GAM paired-test p-value was below the permutation test's resolution — 2026-09-05
+
+**Script**: `scripts/run_gam_paired_test_highres.py`; **data**: `data/processed/gam_paired_test_highres_2026.npz`.
+Found during the submission-readiness review: `gam_paired_test.npz` (999 sign-flip draws) has 8 of 16 seed
+pairs at exactly p=0.000, so the reported median 0.0005 was (0.000+0.001)/2, i.e. below resolution, and the
+"x3 field-selection correction leaves p~0.048, still significant" claim rested on it. Re-run with 99,999
+draws, same arms/T/seeds/blocks (geography-only T=2.605, GAM T=1.008, 16 seeds, canton blocks):
+
+| convention | median p | sig (<0.05) | x32 Bonferroni | x32x3 | x32x8 |
+|---|---|---|---|---|---|
+| plain exceedance fraction | 0.00126 | 15/16 | 0.040 | 0.12 | 0.32 |
+| (b+1)/(m+1) | 0.00127 | 15/16 | 0.041 | 0.12 | 0.33 |
+
+Per-seed raw p range: <1e-4 to 0.058. Conclusion: headline survives the temperature-grid correction
+(0.040) but NOT a stacked field-selection correction (0.12 for 3 fields; 0.33 for 8 tests counting the
+five IDS axes). Manuscript now reports p=0.0013 / 0.040 and states the result does not survive the field
+search correction.
+
+Also recorded in this review pass (no new runs): the political-continuity field's sign-agreement ceiling
+on the coalition split actually used to score its MC run is 80.6% (n=479 with a non-neutral field), not
+the 79.1% computed on the winner-vs-runner-up binarization -- i.e. the same ceiling as GAM (80.9%), so the
+ceiling does not explain that field's weak gain; the unstandardized magnitude (sigma=0.167 at lambda=1, no
+lambda scan) is the more likely cause. Multistability cross-year names corrected from the CSVs:
+Tabarcia (6/16, 4/16) and Palmichal (4/16, 8/16) are the >=4/16-in-both-years distritos; Monterrey is 3/16
+and 4/16. The N=488 Binder curve is non-smooth between adjacent T (0.50->0.23->0.50 at T=1.61-1.83), so the
+FSS verdict is downgraded from "negative" to "no crossing resolved".
