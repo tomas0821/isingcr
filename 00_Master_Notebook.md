@@ -1232,3 +1232,27 @@ lambda*). The 2022 non-replication is therefore an arithmetic consequence of the
 shape, not evidence GAM stopped organizing the vote. Added as a paragraph in main.tex's GAM
 section and a clause in the Discussion. Consistent with the 2022 GAM run reaching 67.16% ~ its
 own 66.7% ceiling.
+
+### Note: does "GAM" mean "developed"? and why the +/-1 GAM field beats the continuous IDS field — 2026-09-04
+
+**Script**: `scripts/gam_vs_ids_field_shape.py` (no MC; fields + empirical map on the N=488 2026 network).
+
+GAM largely IS the developed part of the country: r(GAM, IDS z) = 0.625; mean IDS z +0.79 (GAM) vs
+-0.49 (periphery); 87% of GAM distritos are above the national median IDS, 2% in the bottom quartile;
+87% of top-quartile-IDS distritos are GAM. Raw correlations with the 2026 outcome are nearly equal
+(IDS -0.554, GAM -0.589), yet as Ising fields GAM gave +13.4 and IDS +6.8. The difference is field
+SHAPE, not information content:
+
+1. Ceiling: sign(IDS z) puts 69.3% of distritos on the correct side (the vote flips at HIGH
+   development, not at the mean); the capital-region line puts 80.9%. Best single IDS cut (z=+0.64,
+   chosen on the outcome -> ceiling comparison, not a fair field) would reach 82.8%.
+2. Push allocation: the top-|z| quartile carries 49% of the IDS field's magnitude -- the easy, already
+   decided extremes; the contested middle gets almost none. +/-1 pushes every unit equally.
+3. Fighting the coupling: on the real map the IDS field opposes a unit's neighbor majority on 32% of
+   distritos, GAM on 15%; GAM agrees with the coupling everywhere inside the region and disagrees only
+   at its edge (= the domain-wall error band).
+Within GAM, development still discriminates: leading-side GAM distritos average IDS z +0.39 vs +0.98.
+
+**Manuscript**: new paragraph in the GAM section; collinearity sentence in the confound paragraph;
+"not development" wording in Abstract/Conclusion replaced by "largely coincides with high development
+yet outperforms the development index itself as a field".
