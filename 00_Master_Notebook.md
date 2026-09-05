@@ -1256,3 +1256,23 @@ Within GAM, development still discriminates: leading-side GAM distritos average 
 **Manuscript**: new paragraph in the GAM section; collinearity sentence in the confound paragraph;
 "not development" wording in Abstract/Conclusion replaced by "largely coincides with high development
 yet outperforms the development index itself as a field".
+
+### Analysis: is the Alajuela held-out failure a GAM-proxy artifact? (yes) — 2026-09-04
+
+**Script**: `scripts/run_gam_spatial_cv_proxyfix.py`; **data**: `data/processed/gam_spatial_cv_proxyfix_2026.npz`.
+Same leave-one-province-out procedure as `run_gam_spatial_cv.py` (T=1.008, 16 seeds, sign resolved on
+training folds), with the GAM field modified. Local, ~4.5 min per variant.
+
+| variant | in-sample (median) | Alajuela held-out gap (p) | Cartago gap | San Jose gap | Heredia gap |
+|---|---|---|---|---|---|
+| baseline (proxy as published, 186 GAM) | 81.05% | -19.0 (<0.001) | 0.0 | +9.3 | +10.6 |
+| A: Alajuela Central -> periphery (172) | **84.73%** | **-3.4 (0.29)** | 0.0 | +9.8 | +10.6 |
+| B: all four flagged cantons -> periphery (152) | 82.79% | -3.4 (0.29) | **-13.5** | +8.1 | +10.6 |
+
+Findings: (1) relabeling Alajuela Central alone removes the Alajuela failure and raises in-sample
+alignment by +3.7 pt (consistent with the earlier post-hoc exclusion estimate of +3.1); the published
+81.07% is conservative. (2) Relabeling all four is worse: Cartago collapses (Paraiso genuinely
+belongs in GAM), so the proxy's error is concentrated in Alajuela Central, not spread over the four.
+(3) Caveat: the relabel is chosen because Alajuela failed, so this is a diagnostic/sensitivity
+result, not a new headline; the paper keeps the proxy as published and reports this in the SM CV
+section and the Limitations item.
