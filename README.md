@@ -22,11 +22,11 @@ shared border length as the coupling, and a local predisposition field, to the
   regional failure, Alajuela's central canton, lies inside the metropolitan
   region yet votes with the periphery.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22680097.svg)](https://doi.org/10.5281/zenodo.22680097)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22680955.svg)](https://doi.org/10.5281/zenodo.22680955)
 
 The manuscript itself is versioned separately. Every number in it was produced
-at the release tagged `v1.0-submission` in this repository, archived at
-[doi:10.5281/zenodo.22680097](https://doi.org/10.5281/zenodo.22680097)
+at the release tagged `v1.1-submission` in this repository, archived at
+[doi:10.5281/zenodo.22680955](https://doi.org/10.5281/zenodo.22680955)
 (concept DOI for all versions: 10.5281/zenodo.22680096).
 
 ## Layout
@@ -67,13 +67,13 @@ on a laptop in seconds to about an hour.
 | Fig. 1, administrative map | — | `plot_admin_map.py` |
 | Fig. 2, resolution reversal | `run_ablation.py` (canton, `ablation.npz`); `run_distrito_ablation.py` (*cluster*, `distrito_ablation.npz`) | `plot_resolution_reversal.py` |
 | Fig. 3 and Table 1, three elections | `run_historical_comparison.py`; `investigate_2018_anomaly.py` for the 2018 energetics | `plot_historical_maps.py` |
-| GAM headline (Section 4.5) | `run_gam_field.py` (*cluster*); paired test `run_gam_paired_test_highres.py`; province hold-out `run_gam_spatial_cv.py`; population confound `registered_voters.py` | — |
-| Fig. 4, field-weight scans | `run_gam_lambda_scan.py`, `run_prior_lambda_scan.py`, `run_gam_residual_field.py` (all *cluster*); `prior_lambda_scan_analysis.py`, `run_prior_paired_test_at_lambda.py`, `run_resid_paired_test.py` | `plot_gam_lambda_scan.py` |
-| Table 2 and Fig. 5, official GAM boundary | `run_gam_true_field.py` (*cluster*), `run_true_gam_paired_test.py`, `run_true_gam_spatial_cv.py` | `plot_gam_boundary_comparison.py`, `make_gam_boundary_table.py` |
-| Regression baselines | `run_regression_baselines.py` | — |
-| IDS and political fields (Section 4.6) | `run_3d_scan.py`, `run_3d_scan_2022.py`, `run_mideplan_axis_screen.py`, `run_prior_margin_field.py` (*cluster*); `analyze_3d_scan.py`, `run_soc_paired_test.py`, `run_axis_paired_test.py`, `gam_vs_ids_field_shape.py` | — |
-| Multistability, counterfactual sweep, cascades (Sections 4.7, 4.8) | `run_gam_counterfactual_sweep.py` (*cluster*), `run_gam_cascade_analysis.py`, `run_gam_susceptibility_scan.py` (*cluster*) | `make_contested_distrito_tables.py` |
-| Fig. 6, domain walls | `run_gam_domain_wall_analysis.py`, `run_domain_wall_topology_checks.py`, `run_gam_polarization_trend.py` | `plot_domain_wall_map.py` |
+| Fig. 4 and the GAM headline (Section 4.5) | `run_gam_field.py` (*cluster*); paired test `run_gam_paired_test_highres.py`; province hold-out `run_gam_spatial_cv.py`; population confound `registered_voters.py` | `plot_fit_vs_real_map.py` |
+| Fig. 5, field-weight scans | `run_gam_lambda_scan.py`, `run_prior_lambda_scan.py`, `run_gam_residual_field.py` (all *cluster*); `prior_lambda_scan_analysis.py`, `run_prior_paired_test_at_lambda.py`, `run_resid_paired_test.py` | `plot_gam_lambda_scan.py` |
+| Table 2 and Fig. 6, official GAM boundary (Section 4.6) | `run_gam_true_field.py` (*cluster*), `run_true_gam_paired_test.py`, `run_true_gam_spatial_cv.py`, `run_official_readings_head_to_head.py` | `plot_gam_boundary_comparison.py`, `make_gam_boundary_table.py` |
+| Regression baselines (Section 4.7) | `run_regression_baselines.py` | — |
+| IDS and political fields (Section 4.8) | `run_3d_scan.py`, `run_3d_scan_2022.py`, `run_mideplan_axis_screen.py`, `run_prior_margin_field.py` (*cluster*); `analyze_3d_scan.py`, `run_soc_paired_test.py`, `run_axis_paired_test.py`, `gam_vs_ids_field_shape.py` | — |
+| Multistability, counterfactual sweep, cascades (Sections 4.9, 4.10) | `run_gam_counterfactual_sweep.py` (*cluster*), `run_gam_cascade_analysis.py`, `run_gam_susceptibility_scan.py` (*cluster*), `run_gam_diagnostics_timeavg.py` (time-averaged spins, proxy and official fields) | `make_contested_distrito_tables.py` |
+| Fig. 7, domain walls | `run_gam_domain_wall_analysis.py`, `run_domain_wall_topology_checks.py`, `run_gam_polarization_trend.py` | `plot_domain_wall_map.py` |
 | Table 3, which results survive | the paired tests above plus `run_direct_paired_test.py`, `run_spatial_block_sensitivity.py` | — |
 | Supplementary: Binder cumulant, subsampling, binarization checks, community detection | `run_finite_size_scaling_heavy.py` (*cluster*), `run_distrito_subsample_check.py`, `run_distrito_contiguous_subsample_check.py`, `run_ablation_wvru.py`, `run_distrito_ablation_wvru.py`, `run_spatial_robustness_check.py`, `run_energy_decomposition.py` | `plot_fss_replot.py`, `plot_community_detection*.py`, `plot_coupling_weights*.py`, `plot_field_values.py` |
 
