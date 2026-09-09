@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code or the processed networks, please cite the paper below and this repository."
+title: "IsingCR: an Ising model on Costa Rica's electoral adjacency network"
+type: software
+authors:
+  - family-names: Rojas
+    given-names: Tomás
+    affiliation: "Centro de Investigación en Ciencia e Ingeniería de Materiales (CICIMA) and Sede de Occidente, Universidad de Costa Rica"
+    email: tomas.rojas_s@ucr.ac.cr
+repository-code: "https://github.com/tomas0821/isingcr"
+license: MIT
+version: 1.0.0
+date-released: "2026-09-09"
+keywords:
+  - sociophysics
+  - Ising model
+  - electoral geography
+  - Costa Rica
+  - Monte Carlo
+preferred-citation:
+  type: article
+  title: "Capital-region membership as an Ising field: geography, predisposition and spatial resolution in Costa Rican presidential elections"
+  authors:
+    - family-names: Rojas
+      given-names: Tomás
+  journal: "Physica A: Statistical Mechanics and its Applications"
+  year: 2026
+  notes: "Submitted."

@@ -1,0 +1,9 @@
+services:
+  isingcr:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./figures:/app/figures
+      - ./scripts:/app/scripts
+      - ./src:/app/src
+    command: ["python", "scripts/run_demo.py"]
