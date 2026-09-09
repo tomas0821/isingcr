@@ -18,7 +18,7 @@ L = [r"\begin{table*}[htbp]", r"\centering\small",
      r"\label{tab:gam-boundary}", r"\begin{tabular}{lllrlr}", r"\toprule",
      r"Province & Canton & Distrito & Fraction & Side & Error \\", r"\midrule"]
 for _, r in po.iterrows():
-    L.append(f"{title(r.prov)} & {title(r.canton)} & {title(r.distrito)} & {r.frac_in_gam:.2f} & {r.side} & {r.error_rate:.2f} \\\\")
+    L.append(f"{title(r.prov)} & {title(r.canton)} & {title(r.distrito)} & {r.frac_in_gam:.3f} & {r.side} & {r.error_rate:.2f} \\\\")
 L += [r"\bottomrule", r"\end{tabular}", r"\end{table*}"]
 (ROOT / "manuscript" / "gam_boundary_table.tex").write_text("\n".join(L) + "\n", encoding="utf-8")
 print("rows", len(po), "leading share", np.mean(po.side == "leading").round(3), "always wrong", int((po.error_rate >= 0.999).sum()))

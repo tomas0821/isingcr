@@ -33,44 +33,60 @@ def run_sweep(model: IsingModel, T: float, dynamics: str = "glauber",
 
 def run_mc(model: IsingModel, T: float, n_equil: int = 200, n_sweeps: int = 200,
            dynamics: str = "glauber", measure_every: int = 1,
-           rng: np.random.Generator | None = None) -> dict:
+           rng: np.random.Generator | None = None,
+           record_site_means: bool = False) -> dict:
     """Equilibrate for n_equil sweeps, then measure every `measure_every` sweeps.
 
     Returns a dict with energy/magnetization time series and the final spin config.
+    With record_site_means=True it also returns "site_mean", the per-site
+    time-averaged spin <s_i> over the measured sweeps, so that alignment and
+    multistability can be scored on sign<s_i> rather than on the single
+    end-of-run snapshot (which cannot separate thermal flicker at T~1 from a
+    genuine between-seed basin choice).
     """
     rng = rng if rng is not None else model.rng
     for _ in range(n_equil):
         run_sweep(model, T, dynamics, rng)
 
     energies, magnetizations = [], []
+    site_sum = np.zeros(model.N, dtype=np.float64) if record_site_means else None
+    n_measured = 0
     for step in range(n_sweeps):
         run_sweep(model, T, dynamics, rng)
         if step % measure_every == 0:
             energies.append(model.energy())
             magnetizations.append(model.magnetization())
+            if record_site_means:
+                site_sum += model.spins
+            n_measured += 1
 
-    return {
+    out = {
         "T": T,
         "energy": np.array(energies),
         "magnetization": np.array(magnetizations),
         "final_spins": model.spins.copy(),
     }
+    if record_site_means:
+        out["site_mean"] = site_sum / max(n_measured, 1)
+    return out
 
 
 def _run_single_temperature(J_data, J_indices, J_indptr, J_shape, h, T, n_equil,
-                             n_sweeps, dynamics, measure_every, seed):
+                             n_sweeps, dynamics, measure_every, seed,
+                             record_site_means=False):
     """Picklable worker: rebuilds a model from raw arrays and runs run_mc at one T."""
     J = sp.csr_matrix((J_data, J_indices, J_indptr), shape=J_shape)
     rng = np.random.default_rng(seed)
     spins0 = rng.choice(np.array([-1, 1], dtype=np.int8), size=J_shape[0])
     model = IsingModel(J, h, spins=spins0, rng=rng)
-    return run_mc(model, T, n_equil, n_sweeps, dynamics, measure_every, rng)
+    return run_mc(model, T, n_equil, n_sweeps, dynamics, measure_every, rng,
+                  record_site_means=record_site_means)
 
 
 def temperature_scan(J: sp.spmatrix, h: np.ndarray, temperatures: Sequence[float],
                       n_equil: int = 200, n_sweeps: int = 200, dynamics: str = "glauber",
                       measure_every: int = 1, seed: int | None = None,
-                      n_jobs: int = 1) -> list[dict]:
+                      n_jobs: int = 1, record_site_means: bool = False) -> list[dict]:
     """Run an independent MC simulation at each temperature.
 
     Each temperature starts from a fresh random configuration (standard for
@@ -87,13 +103,13 @@ def temperature_scan(J: sp.spmatrix, h: np.ndarray, temperatures: Sequence[float
         for T, s in zip(temperatures, seeds):
             results.append(_run_single_temperature(
                 J.data, J.indices, J.indptr, J.shape, h, T,
-                n_equil, n_sweeps, dynamics, measure_every, s))
+                n_equil, n_sweeps, dynamics, measure_every, s, record_site_means))
         return results
 
     with ProcessPoolExecutor(max_workers=n_jobs) as pool:
         futures = [
             pool.submit(_run_single_temperature, J.data, J.indices, J.indptr, J.shape,
-                        h, T, n_equil, n_sweeps, dynamics, measure_every, s)
+                        h, T, n_equil, n_sweeps, dynamics, measure_every, s, record_site_means)
             for T, s in zip(temperatures, seeds)
         ]
         return [f.result() for f in futures]

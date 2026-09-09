@@ -1425,3 +1425,30 @@ stays as headline (pre-specified, best); official boundary reported as check + f
 4.5 (new Table 3 `tab:gam-defs`, new Fig. `gam_boundary_comparison.png`), Table 2 (two rows), Fig. 5 caption,
 Discussion, Limitations, abstract, Conclusion; SM S2.3 rewritten (+ `gam_boundary_table`), S12 and S13 updated;
 `mivahgam2013` added to references.bib. Old MIDEPLAN sensitivity estimate and S12 relabeling now marked superseded.
+
+### Round-8 referee fixes: time-averaged spins, official-field diagnostics, inclusive-vs-strict test — 2026-09-09
+
+Referee panel round 8 (`referee_report_2026-09-09.md`, 19 surviving majors). Compute items:
+(1) `run_mc` now optionally records per-site time averages <s_i> over the measurement sweeps
+(`record_site_means`). `scripts/run_gam_diagnostics_timeavg.py` (16 seeds 7-22, 20000/20000) on the proxy field at
+T=1.008 and the official inclusive field at T=0.689 -> `gam_diagnostics_timeavg_2026.npz`. Proxy: alignment on
+sign<s_i> median 81.56% (snapshot 81.05%); 14/16 chains identical node for node, 85.0% locked, NO distrito with
+>=3 minority seeds (snapshot scoring had 13); Tabarcia/Palmichal/Monterrey have seed sd of <s_i> = 0.01 and
+|<s_i>| = 0.40/0.11/0.51 -> thermally undecided, not bistable (Tabarcia's time-averaged sign is wrong). Chain-level
+disagreement instead: seed 20 lands at 68.0% (second basin), seed 10 ends with 12% flickering nodes. Official any
+field at T=0.689: 15 distritos with >=3 minority seeds survive time-averaging (77.9% locked): two chains at 71%,
+Bahia Drake + Puerto Jimenez split 7/16 (sd 0.99, locked within chain), Cartago fringe block (Orosi, San Isidro
+El Guarco, Aguacaliente, Dulce Nombre, Corralillo) splits 3/16 as a block. Domain wall on time-averaged spins:
+37.0 vs 16.0 (proxy), 37.7 vs 16.8 (official, n=82 vs 406, MWU p=8.6e-4). Cascades on the official field:
+9/10 zero (Palmichal's 1 disappears), Orosi 4 = the same Cartago block.
+(2) `run_official_readings_head_to_head.py`: inclusive vs area-majority from saved spins: inclusive ahead 14/16,
+median +1.64 pts, paired block p=0.088 (7/16), x32 = 2.8.
+(3) New Fig. 4 `fit_vs_real_map.png` (returns vs fitted seed-majority map, 81.56% agreement); Fig. 7
+(domain wall) redrawn with the official polygon instead of the a-priori suspect cantons, "single round" title.
+Text: abstract (ceiling = returns-only bound the fit saturates at; lambda* "near 1-2"; "one province-level
+failure"; "read inclusively"), Sec. 4.5 split into 4.5/4.6/4.7 (canton-level GAM paragraph moved to SM), block
+sign-flip test described correctly, snapshot scoring stated in Methods, chi at h=0 sign-degeneracy note, LOPO
+"not the same protocol", Fernandez-Gracia promoted to comparator, Godoy-Lorite reworded, Camacho Sanchez
+corrected (2022 restructured), Sec. 4.9 rewritten around time-averaged spins, falsifiable 2030 statement on the
+undecided distritos + two blocks, Table 3 caption/family note, Conclusion trimmed. Old tag v1.0-submission
+predates these runs; new release v1.1-submission cut for the pin.

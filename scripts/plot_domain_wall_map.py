@@ -20,26 +20,28 @@ matching plot_historical_maps.py's per-election-panel convention.
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path("/home/tomas/mnt/gdrive/Research/Current/IsingCR/src")))
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "src"))
 
+import geopandas as gpd
 import matplotlib.pyplot as plt
 import pandas as pd
 
 from isingcr.ingestion import load_shapefile, normalize_distrito_code
 
-ROOT = Path("/home/tomas/mnt/gdrive/Research/Current/IsingCR")
 DATA_RAW = ROOT / "data" / "raw"
 DATA_PROCESSED = ROOT / "data" / "processed"
 OUT = ROOT / "manuscript" / "figures" / "domain_wall_map.png"
 SHAPEFILE_PATH = DATA_RAW / "boundaries" / "extracted" / "cri_admin3.shp"
 PROVINCE_COL, CANTON_COL, DISTRITO_COL = "adm1_name", "adm2_name", "adm3_name"
 
-# Same 4 cantons Section "Gran Area Metropolitana (GAM) membership" names as
-# most likely over-included by the canton-level proxy.
-RISK_CANTONS = {"SAN JOSE|MORA", "ALAJUELA|CENTRAL", "SAN JOSE|ASERRI", "CARTAGO|PARAISO"}
+# Official Plan GAM 2013-2030 polygon (MIVAH GeoExplora), overlaid so the
+# reader sees the proxy's decision boundary against the official one; the
+# earlier "risk canton" overlay is superseded by that comparison (round 8).
+GAM_POLYGON = DATA_RAW / "gam" / "gam_limite" / "GAM_LIMITE_1.shp"
 
 YEARS = [
-    {"label": "2026 (round 1)", "csv": DATA_PROCESSED / "gam_domain_wall_analysis_2026.csv"},
+    {"label": "2026 (single round)", "csv": DATA_PROCESSED / "gam_domain_wall_analysis_2026.csv"},
     {"label": "2022 (runoff)", "csv": DATA_PROCESSED / "gam_domain_wall_analysis_2022.csv"},
 ]
 
@@ -50,6 +52,7 @@ def canton_of(node_code: str) -> str:
 
 
 gdf = load_shapefile(SHAPEFILE_PATH, id_col=DISTRITO_COL)
+gam_poly = gpd.read_file(GAM_POLYGON).to_crs(gdf.crs)
 gdf["code"] = [normalize_distrito_code(p, c, d)
                for p, c, d in zip(gdf[PROVINCE_COL], gdf[CANTON_COL], gdf[DISTRITO_COL])]
 
@@ -84,13 +87,9 @@ for i, (ax, year) in enumerate(zip(axes, YEARS)):
     if len(gam_union):
         gam_union.boundary.plot(ax=ax, edgecolor="black", linewidth=1.3)
 
-    # Proxy-misclassification-risk cantons: dashed outline, so a reader can
-    # see directly how much of the high-error GAM territory sits inside one
-    # of these rather than take the "Mora" narrative on faith.
-    merged["canton_code"] = [canton_of(c) if isinstance(c, str) else None for c in merged["code"]]
-    risk = merged[merged["canton_code"].isin(RISK_CANTONS)].dissolve()
-    if len(risk):
-        risk.boundary.plot(ax=ax, edgecolor="#1a6fb0", linewidth=1.1, linestyle="--")
+    # Official boundary, dashed, so the reader can see where the proxy's
+    # decision boundary departs from the official polygon.
+    gam_poly.boundary.plot(ax=ax, edgecolor="#1a6fb0", linewidth=1.1, linestyle="--")
 
     ax.set_title(year["label"], fontsize=11)
     ax.set_axis_off()
@@ -102,7 +101,7 @@ handles = [
     plt.matplotlib.lines.Line2D([0], [0], color="black", linewidth=1.3,
                                  label="GAM boundary (canton-level proxy)"),
     plt.matplotlib.lines.Line2D([0], [0], color="#1a6fb0", linewidth=1.1, linestyle="--",
-                                 label="proxy-misclassification-risk cantons\n(Mora, Alajuela Central, Aserrí, Paraíso)"),
+                                 label="official GAM boundary (Plan GAM 2013–2030)"),
 ]
 fig.legend(handles=handles, loc="lower center", ncol=2, frameon=False,
            bbox_to_anchor=(0.46, 0.0), fontsize=9)
