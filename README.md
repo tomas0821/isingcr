@@ -22,11 +22,11 @@ shared border length as the coupling, and a local predisposition field, to the
   regional failure, Alajuela's central canton, lies inside the metropolitan
   region yet votes with the periphery.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22680955.svg)](https://doi.org/10.5281/zenodo.22680955)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22682527.svg)](https://doi.org/10.5281/zenodo.22682527)
 
 The manuscript itself is versioned separately. Every number in it was produced
 at the release tagged `v1.3-submission` in this repository, archived at
-[doi:10.5281/zenodo.22680955](https://doi.org/10.5281/zenodo.22680955)
+[doi:10.5281/zenodo.22682527](https://doi.org/10.5281/zenodo.22682527)
 (concept DOI for all versions: 10.5281/zenodo.22680096).
 
 ## Layout
