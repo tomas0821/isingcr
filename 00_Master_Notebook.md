@@ -1452,3 +1452,26 @@ sign-flip test described correctly, snapshot scoring stated in Methods, chi at h
 corrected (2022 restructured), Sec. 4.9 rewritten around time-averaged spins, falsifiable 2030 statement on the
 undecided distritos + two blocks, Table 3 caption/family note, Conclusion trimmed. Old tag v1.0-submission
 predates these runs; new release v1.1-submission cut for the pin.
+
+### Round-9 referee fixes: temperature x field grid, independent seeds, chain series, 2022 time-averaged — 2026-09-09
+
+`referee_report_2026-09-09_round9.md` (11 distinct majors). `run_mc` gained `record_spins_every`;
+`scripts/run_gam_timeavg_grid.py` -> `gam_timeavg_grid_2026.npz`: proxy@1.008 and @0.689 (seeds 7-22), official
+any@1.008 and @0.689 (independent seeds 107-122), proxy 2022@1.008, all 16 chains, 20000/20000, configuration every
+100 sweeps. Findings: (1) the two atypical proxy chains at T=1.008 are ONE slow mode, a ~70-distrito periphery
+domain (Turrialba, Buenos Aires, Pococi, Siquirres, Coto Brus, Sarapiqui, Osa) held against its field: seed 20 frozen
+(68.0%, |<s>|=0.89), seed 10 decaying during the measurement window (alignment 70.8/75.2/80.5/81.2 by quarter,
+half-window sign agreement 0.885) -> equilibration budget marginal for starts that land in it; 14 stationary chains
+identical at 81.56%. Official field with independent seeds at 1.008: 99.2% locked, every chain within 4 sites of the
+consensus, 80.96+/-0.34. (2) Lowering T to 0.689 under EITHER field makes weakly attached blocks bistable (Osa pair
+7/16 in both fields; southern border; Sarapiqui/San Carlos lowlands): a temperature effect, not a field effect;
+at 1.008 those blocks are locked under both fields. (3) The Cartago fringe (Orosi, Aguacaliente, Dulce Nombre, El
+Guarco San Isidro) is contested at the fitted T under the official field (3-5/16), under proxy@0.689 (3/16) and in
+2022 (6/16 with San Cristobal): the one block bistable at the fitted temperature = the Orosi cascade block.
+(4) 2022 time-averaged: 90.3% locked, Tabarcia/Palmichal/Monterrey at the same <s> as 2026 (-0.40/+0.11/-0.49).
+(5) Domain wall on the consensus map: Fisher p=1.8e-5 (proxy 29/79 vs 61/409), 5e-8 (official 35/82 vs 59/406);
+MWU on the nearly binary time-averaged rates 1.2e-3 -> Table 3 row now Fisher. Text: Sec. 4 reordered (4.4 protocol,
+4.5 IDS+political, 4.6 GAM, 4.7 official, 4.8 confounds); 4.9 rewritten physics-first; orientation of +/-1 fields
+stated in 3.4; observables unified to three; lambda* named the alignment-optimal weight; Fernandez-Gracia axis
+corrected; falsifiable 2030 statement on the four undecided interface sites + the Cartago block; Baldassarri 2023
+and Suchecki 2005 cited; SM figure chain_series.png. Release v1.2-submission cut for the pin.
