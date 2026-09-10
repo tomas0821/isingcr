@@ -1493,3 +1493,13 @@ block attribution per field; 0.689 treated as "the lower temperature" (official 
 80.65+/-1.21 at 0.689); Varablanca consensus value 0.45; political weight scan moved after GAM's lambda scan;
 observables identical in abstract/4.8/Discussion/Conclusion; political-science paragraph compressed; two-sided
 p-values throughout; contested-table provenance (fixed-T seeds 7-22); cover letter fixes.
+
+### Length trim and post-trim consistency check — 2026-09-10
+
+Rounds 11 (consistency after round 10) and 12 (after the trim) were single-referee passes; both minor, applied
+(`referee_report_2026-09-10_round11.md`, `..._round12.md`). Trim: main text 22 -> 20 pages, body words 9750 -> ~8100,
+every number kept: Introduction, Sec. 4.9, 4.10, Discussion and Limitations compressed; per-year domain-wall contrasts
+and the error map (now SM Fig.), the per-cell block inventory and the criticality comparators (Korbel, Biswas-Sen,
+Meyer-Metzler, Galam) moved to new SM subsections. Release v1.3-submission (208b61f) archived at
+doi:10.5281/zenodo.22682527 (Zenodo was down ~4 h on 2026-09-10; the v1.2 release webhook failed and v1.2 was never
+archived; v1.3 supersedes it). Submission package: main 20 pp, SM 30 pp, highlights, cover letter.
