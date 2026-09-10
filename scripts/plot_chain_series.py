@@ -15,7 +15,7 @@ fig, ax = plt.subplots(figsize=(7.5, 3.6))
 for k in range(ser.shape[0]):
     if k in (3, 13):
         continue
-    ax.plot(x, 100 * ser[k], color="0.75", lw=0.8, label="14 stationary chains" if k == 0 else None)
+    ax.plot(x, 100 * ser[k], color="0.75", lw=0.8, label="14 consensus chains" if k == 0 else None)
 ax.plot(x, 100 * ser[13], color="tab:red", lw=1.4, label=f"seed {seed0+13}: periphery domain, frozen")
 ax.plot(x, 100 * ser[3], color="tab:blue", lw=1.4, label=f"seed {seed0+3}: periphery domain, decaying")
 ax.set_xlabel("measurement sweep"); ax.set_ylabel("alignment with 2026 map (%)")

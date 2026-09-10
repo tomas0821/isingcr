@@ -1475,3 +1475,21 @@ MWU on the nearly binary time-averaged rates 1.2e-3 -> Table 3 row now Fisher. T
 stated in 3.4; observables unified to three; lambda* named the alignment-optimal weight; Fernandez-Gracia axis
 corrected; falsifiable 2030 statement on the four undecided interface sites + the Cartago block; Baldassarri 2023
 and Suchecki 2005 cited; SM figure chain_series.png. Release v1.2-submission cut for the pin.
+
+### Round-10 referee fixes: canton-scale domain wall, domain family, stationarity wording — 2026-09-10
+
+`referee_report_2026-09-10_round10.md` (7 majors, all writing except one re-test). `scripts/run_domain_wall_cluster_test.py`
+-> `domain_wall_cluster_test_2026.npz`: on the consensus maps at T=1.008, within the 31 cantons containing both boundary
+and interior distritos the boundary ones err more in 2, less in 9, equal in 20 (proxy; official 8/7/16); the 34 cantons
+the GAM line cuts err at 0.30 vs 0.09 elsewhere -> the domain-wall excess is between cantons, not within them.
+Canton-cluster bootstrap (20000): proxy two-sided p=0.006 (x32=0.19, fails grid), official (independent seeds)
+p=1e-4 (x32=0.003). Table 3 row changed accordingly ("no" under the proxy; official survives in footnote); only
+the political field at lambda=16 now survives every correction. Other fixes: the two domain chains are overlapping
+domains sharing a Brunca core (seed 20 + Caribbean lowlands, 72; seed 10 + Perez Zeledon, 59 low-|s| sites; 2022
+seed 12 same PZ-Brunca composition), not one slow mode; stationarity criterion passes 15/16 (seed 20 stationary in
+its domain) so "14 consensus chains" replaces "14 stationary"; Cartago block is locked under proxy@1.008 -> 2030
+statement made field-specific (four interface sites under the proxy; Cartago block under the official field);
+block attribution per field; 0.689 treated as "the lower temperature" (official at 1.008 independent 80.96+/-0.34 vs
+80.65+/-1.21 at 0.689); Varablanca consensus value 0.45; political weight scan moved after GAM's lambda scan;
+observables identical in abstract/4.8/Discussion/Conclusion; political-science paragraph compressed; two-sided
+p-values throughout; contested-table provenance (fixed-T seeds 7-22); cover letter fixes.
