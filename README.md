@@ -25,7 +25,7 @@ shared border length as the coupling, and a local predisposition field, to the
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22680955.svg)](https://doi.org/10.5281/zenodo.22680955)
 
 The manuscript itself is versioned separately. Every number in it was produced
-at the release tagged `v1.1-submission` in this repository, archived at
+at the release tagged `v1.3-submission` in this repository, archived at
 [doi:10.5281/zenodo.22680955](https://doi.org/10.5281/zenodo.22680955)
 (concept DOI for all versions: 10.5281/zenodo.22680096).
 
