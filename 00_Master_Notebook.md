@@ -1513,3 +1513,22 @@ remaps and the numerals moved into it. Results now 4.1 reversal / 4.2 three elec
 and dynamics / 4.8 survives table; Model 3.1-3.3 with the protocol stated once. Scripted audits: no numeral or citation
 lost, none new, all refs resolve. One referee pass (`referee_report_2026-09-12_rewrite.md`): one major (IDS scan clause
 restored) + 25 minors, applied. The pre-rewrite text is the parent commit (a95e457 lineage) and can be restored whole.
+
+### Cold-read panel (round 14) applied: reframing, restart test, granularity sweep — 2026-09-12
+
+`referee_report_2026-09-12_cold.md`: four referees with no revision history; every number sound; the framing
+(title/abstract/highlights headlining GAM while the abstract's own corrections hand the verdict to the prior vote) and
+one section of physics (official field evaluated at 1.008 where locked, at its own 0.689 where bistable; domains
+called metastable equilibria) were the findings. Applied: new title "An Ising model on a real border-adjacency
+network: resolution dependence and capital-region fields in Costa Rican elections"; abstract/Intro/Discussion/
+Conclusion/highlights realigned around the reversal + two spatially organized fields that tie + pinned non-critical
+equilibrium + 2018 energetics; "physical observables the fit adds" -> "what the fit shows", ceiling dropped from
+the list; IDS unit-weight value (73.96%) and IDS curve on Fig. 6; new main-text Fig. 3 (chi, C, U4); counterfactual
+table; Table 3 one verdict per result, weights "--" for unit-weight rows, family 3-vs-8 note, "screening rule" note.
+Runs: `run_restart_from_consensus.py` -> `restart_from_consensus_2026.npz`: 64/64 chains started at the consensus
+stay there for 100,000 sweeps (both fields, both T); from the 72-site domain, 6/16 escape at T=1.008 under each
+field (5,000-88,000 sweeps), 0/32 at T=0.689 -> domains are one-way trapping of random starts, slower at lower T,
+not equilibria; text rewritten accordingly. Block-granularity sweep on saved spins (province/canton/half-canton):
+GAM proxy 0.033/0.0012/<1e-4 (9,15,16 of 16 sig), official any 0.063/0.0011/1e-4, majority 0.048/0.0014/1e-4 ->
+SM. Thermally undecided criterion |<s>|<=0.5 over consensus chains, per-cell SM table (proxy@1.008: Palmichal,
+Tabarcia, Varablanca; Monterrey 0.51 borderline). Main 17 pp, SM 30 pp. Release v1.4-submission for the pin.

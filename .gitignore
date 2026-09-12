@@ -25,3 +25,4 @@ cross_model_*.md
 style_review_*.md
 /*.pdf
 *:Zone.Identifier
+texput.log

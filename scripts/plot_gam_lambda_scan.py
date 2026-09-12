@@ -39,6 +39,14 @@ for i in range(9):
 own.sort()
 own = [o for o in own if o[0] > 0]  # log axis: the lambda=0 point is the geography-only line
 
+# IDS composite scan (run_3d_scan.py, lambda_pol=0), 2026
+ids = []
+for i in range(5):
+    r = np.load(P / f"scan_3d_pol0_soc{i}.npz", allow_pickle=True)["results"][0]
+    if r["lambda_soc"] > 0:
+        ids.append((r["lambda_soc"], r["best_accuracy"]))
+ids.sort()
+
 # political-continuity (2022 runoff margin) field scan, if present
 pol = []
 for f in sorted(P.glob("prior_lambda_scan_2026_lam*.npz")):
@@ -61,6 +69,9 @@ fig, ax = plt.subplots(figsize=(6.4, 4.2))
 ax.errorbar(gl, 100 * ga, yerr=100 * gs, fmt="o-", color="tab:red", capsize=3,
             label="GAM (capital region, $h_i=\\pm1$)")
 ax.plot(ol, 100 * oa, "s--", color="tab:gray", label="own vote margin (circular)")
+if ids:
+    il, ia = np.array(ids).T
+    ax.plot(il, 100 * ia, "D-", color="tab:green", ms=5, label="development index (IDS, $z$-scored)")
 if pol:
     pl, pa, ps = np.array(pol).T
     ax.errorbar(pl, 100 * pa, yerr=100 * ps, fmt="^-", color="tab:blue", capsize=3, ms=5,
