@@ -1503,3 +1503,13 @@ and the error map (now SM Fig.), the per-cell block inventory and the criticalit
 Meyer-Metzler, Galam) moved to new SM subsections. Release v1.3-submission (208b61f) archived at
 doi:10.5281/zenodo.22682527 (Zenodo was down ~4 h on 2026-09-10; the v1.2 release webhook failed and v1.2 was never
 archived; v1.3 supersedes it). Submission package: main 20 pp, SM 30 pp, highlights, cover letter.
+
+### Main text rewritten from the final results — 2026-09-12
+
+`manuscript/rewrite_outline.md` -> new main.tex (commit c84192d): 16 pages, ~7,700 body words (from 8,100 after the
+trim, 9,750 before), abstract 235 words, same six figures and three tables, SM 29 pp untouched except for section-number
+remaps and the numerals moved into it. Results now 4.1 reversal / 4.2 three elections / 4.3 fields at unit weight /
+4.4 weight scans and ceiling / 4.5 official boundary / 4.6 confounds, regression, observables / 4.7 fitted equilibrium
+and dynamics / 4.8 survives table; Model 3.1-3.3 with the protocol stated once. Scripted audits: no numeral or citation
+lost, none new, all refs resolve. One referee pass (`referee_report_2026-09-12_rewrite.md`): one major (IDS scan clause
+restored) + 25 minors, applied. The pre-rewrite text is the parent commit (a95e457 lineage) and can be restored whole.
