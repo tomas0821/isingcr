@@ -8,9 +8,9 @@ authors:
     affiliation: "Centro de Investigación en Ciencia e Ingeniería de Materiales (CICIMA) and Sede de Occidente, Universidad de Costa Rica"
     email: tomas.rojas_s@ucr.ac.cr
 repository-code: "https://github.com/tomas0821/isingcr"
-doi: 10.5281/zenodo.22682527
+doi: 10.5281/zenodo.22730722
 license: MIT
-version: 1.3.0
+version: 1.4.0
 date-released: "2026-09-09"
 keywords:
   - sociophysics
