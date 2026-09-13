@@ -1,3 +1,7 @@
+---
+artifact_url: https://claude.ai/code/artifact/200d62c5-8b02-43a9-b82a-72d40bbf7236
+results_deck_url: https://claude.ai/code/artifact/f756949c-db0e-46c0-9402-2ae6040c04f9
+---
 # 📓 Lab Notebook — IsingCR
 
 **Started:** 2026-08-16
@@ -103,7 +107,7 @@
       ("ok lets hold on") pending (a) results settling and (b) a targeted novelty check
       on the two-field/socioeconomic-covariate angle, starting with `massoli2026`
       (already in the bibliography), before any manuscript-integration decision.
-- [ ] 2022 padrón electoral (full national voter registry, `data/raw/tse_padron/
+- [x] 2022 padrón electoral (full national voter registry, `data/raw/tse_padron/
       padron_completo_2022.zip`, 3,541,908 rows) downloaded 2026-08-21 — recovered via
       Wayback Machine (TSE's *current* download page only ever serves the live/updated
       registry, no historical archive) from an orphaned-but-still-live URL, verified as
@@ -117,6 +121,10 @@
       comparable), or TSE's live interactive consulta tool for real sex/age aggregates
       (accurate but 2026-only, breaks year comparability the same way the MIDEPLAN IDS
       2023-on-2022-election timing gap already does).
+      **Closed 2026-09-13:** the registry could not be joined to the electoral geography
+      (documented as a dead end in SM S2.5); registered-voter counts from the consolidado
+      files serve as the population covariate instead. No further action.
+
 - [x] Zotero collection wired up 2026-08-16: Sociophysics ▸ IsingCR (key `BA4KBCB9`),
       all 16 NOVELTY_CHECK.md §3 references added via the Zotero Web API and tagged
       `IsingCR-novelty-check`. All 16 PDFs attached (by the user) and converted to
@@ -173,6 +181,8 @@ covers "cultural and political complexity"); **European Physical Journal B** (fa
 
 ### Run: synthetic demo (`run_demo.py`) — 2026-08-15
 
+**Status:** superseded by [[Run: real pipeline, 2026 coalition split (`run_real_pipeline.py`) — 2026-08-16]]
+
 Validates the full pipeline (ingestion → simulation → visualization) end to end without
 depending on real data files; also what the Docker image build is checked against.
 
@@ -201,6 +211,8 @@ a claim by the pooled runs below.
 ---
 
 ### Run: real pipeline, 2026 coalition split (`run_real_pipeline.py`) — 2026-08-16
+
+**Status:** superseded by [[Run: geography-vs-predisposition ablation (`run_ablation.py`) — 2026-08-16]]
 
 First fully real run: real 2026 presidential results × real canton adjacency.
 Binarization: PUEBLO SOBERANO (48.5% nationally) vs. a coalition of the next three
@@ -279,6 +291,8 @@ the same node, i.e. real but limited spatial loyalty, not a clean repeat).
 
 ---
 
+![Real canton maps, three elections (paper Fig. 4)](figures/historical_maps.png)
+
 ### Run: geography-vs-predisposition ablation (`run_ablation.py`) — 2026-08-16
 
 The key methodological run. Same 2026 coalition-split data as above, two configurations:
@@ -353,6 +367,8 @@ election data) — exactly what the secondhand citation-context inference predic
 ---
 
 ### Analysis: McNemar significance testing + finite-size scaling — 2026-08-16
+
+**Status:** superseded by [[Run: Finite-size scaling, heavy re-run (UCR HPC cluster) — 2026-08-16]]
 
 Prompted by mining the 16 converted papers for techniques this project hadn't tried yet.
 Two additions, both now in `isingcr.simulation.observables` and covered by tests.
@@ -505,6 +521,10 @@ AI Handoff for the IDS-2023 follow-up.
 ![2018 anomaly explanation](figures/2018_anomaly.png)
 
 ---
+
+![Resolution reversal, both resolutions on one axis (paper Fig. 2)](figures/resolution_reversal.png)
+
+![Thermodynamic diagnostics: chi, C and U4 (paper Fig. 3)](figures/thermo_main.png)
 
 ### Run: 3D scan, geography x political field x MIDEPLAN social-development field — 2026-08-20/21
 
@@ -760,7 +780,11 @@ as the MIDEPLAN and prior-margin-field runs above.
 
 ---
 
+![2026 returns beside the fitted geography+GAM equilibrium (paper Fig. 5)](figures/fit_vs_real_map.png)
+
 ### Analysis: GAM domain-wall (which distritos does the field get wrong) — 2026-08-21
+
+**Status:** superseded by [[Round-10 referee fixes: canton-scale domain wall, domain family, stationarity wording — 2026-09-10]]
 
 The first analysis this session to use the model's spatial-coupling structure itself,
 not just fit another covariate. Question: does geography+GAM's ~19% error rate
@@ -951,6 +975,8 @@ what it should be described as. Raw data: `data/processed/registered_voters_{202
 
 ### Note: how much the canton-level GAM proxy's imprecision actually matters — 2026-08-21
 
+**Status:** superseded by [[The official GAM boundary vs. the canton proxy — 2026-09-08]]
+
 Follow-up to the "problematic cantons" discussion above (which specific distritos the
 canton-level proxy likely misclassifies -- Mora's rural fringe, large cantons like
 Alajuela Central/Paraíso/Aserrí flagged as most at-risk, general geography reasoning
@@ -987,6 +1013,8 @@ resolve this cleanly; not done given the headline result doesn't need it.
 ---
 
 ### Analysis: multistability check (does the model have a unique equilibrium?) — 2026-08-21
+
+**Status:** superseded by [[Cold-read panel (round 14) applied: reframing, restart test, granularity sweep — 2026-09-12]]
 
 Prompted by a fair challenge: most of this session's covariate work (MIDEPLAN, prior-
 margin, even GAM's headline correlation) can be argued nearly as well from raw vote
@@ -1215,6 +1243,8 @@ during this run: VPN dropped mid-job and openconnect's vpnc-script left UCR's in
 nameservers in /mnt/wsl/resolv.conf -- restore `nameserver 172.31.192.1` (or let WSL
 regenerate) before reconnecting, or nothing resolves including the gateway.
 
+![Field-weight scans: GAM, political continuity, IDS and the circular own margin (paper Fig. 6)](figures/gam_lambda_scan.png)
+
 ### Note: why GAM does not replicate in 2022 -- the ceiling is the baseline — 2026-09-03
 
 Free computation, no MC (`build_graph_and_gam_field` for both years; sign-agreement ceiling
@@ -1258,6 +1288,8 @@ Within GAM, development still discriminates: leading-side GAM distritos average 
 yet outperforms the development index itself as a field".
 
 ### Analysis: is the Alajuela held-out failure a GAM-proxy artifact? (yes) — 2026-09-04
+
+**Status:** superseded by [[The official GAM boundary vs. the canton proxy — 2026-09-08]]
 
 **Script**: `scripts/run_gam_spatial_cv_proxyfix.py`; **data**: `data/processed/gam_spatial_cv_proxyfix_2026.npz`.
 Same leave-one-province-out procedure as `run_gam_spatial_cv.py` (T=1.008, 16 seeds, sign resolved on
@@ -1426,6 +1458,8 @@ stays as headline (pre-specified, best); official boundary reported as check + f
 Discussion, Limitations, abstract, Conclusion; SM S2.3 rewritten (+ `gam_boundary_table`), S12 and S13 updated;
 `mivahgam2013` added to references.bib. Old MIDEPLAN sensitivity estimate and S12 relabeling now marked superseded.
 
+![Canton proxy against the official Plan GAM polygon (paper Fig. 7)](figures/gam_boundary_comparison.png)
+
 ### Round-8 referee fixes: time-averaged spins, official-field diagnostics, inclusive-vs-strict test — 2026-09-09
 
 Referee panel round 8 (`referee_report_2026-09-09.md`, 19 surviving majors). Compute items:
@@ -1476,6 +1510,8 @@ stated in 3.4; observables unified to three; lambda* named the alignment-optimal
 corrected; falsifiable 2030 statement on the four undecided interface sites + the Cartago block; Baldassarri 2023
 and Suchecki 2005 cited; SM figure chain_series.png. Release v1.2-submission cut for the pin.
 
+![Alignment of 16 chains over the measurement window: 14 consensus, one frozen domain, one decaying (SM)](figures/chain_series.png)
+
 ### Round-10 referee fixes: canton-scale domain wall, domain family, stationarity wording — 2026-09-10
 
 `referee_report_2026-09-10_round10.md` (7 majors, all writing except one re-test). `scripts/run_domain_wall_cluster_test.py`
@@ -1493,6 +1529,8 @@ block attribution per field; 0.689 treated as "the lower temperature" (official 
 80.65+/-1.21 at 0.689); Varablanca consensus value 0.45; political weight scan moved after GAM's lambda scan;
 observables identical in abstract/4.8/Discussion/Conclusion; political-science paragraph compressed; two-sided
 p-values throughout; contested-table provenance (fixed-T seeds 7-22); cover letter fixes.
+
+![Per-distrito error rate with proxy and official boundaries (SM)](figures/domain_wall_map.png)
 
 ### Length trim and post-trim consistency check — 2026-09-10
 
@@ -1532,3 +1570,5 @@ not equilibria; text rewritten accordingly. Block-granularity sweep on saved spi
 GAM proxy 0.033/0.0012/<1e-4 (9,15,16 of 16 sig), official any 0.063/0.0011/1e-4, majority 0.048/0.0014/1e-4 ->
 SM. Thermally undecided criterion |<s>|<=0.5 over consensus chains, per-cell SM table (proxy@1.008: Palmichal,
 Tabarcia, Varablanca; Monterrey 0.51 borderline). Main 17 pp, SM 30 pp. Release v1.4-submission for the pin.
+
+![Restart test: chains from the consensus never leave; chains from the domain escape only at T=1.008 (SM)](figures/restart_series.png)

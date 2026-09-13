@@ -2,25 +2,31 @@
 
 Simulation code, processed networks and result files for
 
-> T. Rojas, *Capital-region membership as an Ising field: geography, predisposition
-> and spatial resolution in Costa Rican presidential elections*, submitted to
+> T. Rojas, *An Ising model on a real border-adjacency network: resolution
+> dependence and capital-region fields in Costa Rican elections*, submitted to
 > Physica A (2026).
 
 The paper fits an Ising model by Glauber Monte Carlo on Costa Rica's real
 border-adjacency network, with cantons (N = 84) or distritos (N = 488) as spins,
 shared border length as the coupling, and a local predisposition field, to the
-2018, 2022 and 2026 presidential results. Its two findings:
+2018, 2022 and 2026 presidential results. Its findings:
 
 - **The geography-versus-predisposition answer depends on resolution.** A unit's
   own vote margin as field adds +1.2 points of alignment at canton level but
-  +8.7 to +11.6 at distrito level.
-- **Membership in the Gran Área Metropolitana (GAM), the capital region, is the
-  independent field that carries the 2026 map.** At unit weight it reproduces 81%
-  of distritos (+13.4 points over geography alone, paired spatial-block
-  p < 0.001), beats an equally correlated development index at every weight, and
-  is reproduced by the official distrito-level GAM boundary. The model's one
-  regional failure, Alajuela's central canton, lies inside the metropolitan
-  region yet votes with the periphery.
+  +8.7 to +11.6 at distrito level, reproducible under subsampling and binarization.
+- **Two spatially organized fields carry the 2026 map.** Membership in the Gran
+  Área Metropolitana (GAM), the capital region, reproduces 81% of distritos at
+  unit field strength (+13.4 points over geography alone, paired spatial-block
+  p = 0.0013), beats an equally correlated development index at every weight
+  scanned, and is reproduced by the official distrito-level boundary; the
+  previous runoff's margin ties it at matched magnitude and exceeds it in point
+  estimate at its own optimized weight, the two never statistically
+  distinguishable. The model's one province-level failure, Alajuela, is a
+  provincial capital inside the metropolitan region that votes with the periphery.
+- **The fitted system is a pinned, non-critical equilibrium**, reached by 14 of
+  16 random starts, that absorbs single-node perturbations; the 2018 map, the most
+  spatially clustered of the three, is the costliest to reproduce because a
+  two-domain state has the longest interface.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22730722.svg)](https://doi.org/10.5281/zenodo.22730722)
 
