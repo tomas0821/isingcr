@@ -9,24 +9,30 @@ Simulation code, processed networks and result files for
 The paper fits an Ising model by Glauber Monte Carlo on Costa Rica's real
 border-adjacency network, with cantons (N = 84) or distritos (N = 488) as spins,
 shared border length as the coupling, and a local predisposition field, to the
-2018, 2022 and 2026 presidential results. Its findings:
+2018, 2022 and 2026 presidential results. Three of its findings are about the
+method rather than about Costa Rica:
 
-- **The geography-versus-predisposition answer depends on resolution.** A unit's
-  own vote margin as field adds +1.2 points of alignment at canton level but
-  +8.7 to +11.6 at distrito level, reproducible under subsampling and binarization.
-- **Two spatially organized fields carry the 2026 map.** Membership in the Gran
-  Área Metropolitana (GAM), the capital region, reproduces 81% of distritos at
-  unit field strength (+13.4 points over geography alone, paired spatial-block
-  p = 0.0013), beats an equally correlated development index at every weight
-  scanned, and is reproduced by the official distrito-level boundary; the
-  previous runoff's margin ties it at matched magnitude and exceeds it in point
-  estimate at its own optimized weight, the two never statistically
-  distinguishable. The model's one province-level failure, Alajuela, is a
-  provincial capital inside the metropolitan region that votes with the periphery.
-- **The fitted system is a pinned, non-critical equilibrium**, reached by 14 of
-  16 random starts, that absorbs single-node perturbations; the 2018 map, the most
-  spatially clustered of the three, is the costliest to reproduce because a
-  two-domain state has the longest interface.
+- **Resolution reverses the answer.** A unit's own vote margin as field adds
+  +1.2 points of alignment at canton level but +8.7 to +11.6 at distrito level,
+  reproducible in effect size under subsampling and binarization, so one
+  administrative level cannot settle the contagion-versus-predisposition balance.
+- **How a site's state is scored changes the verdict.** Scoring on the end-of-run
+  configuration conflates thermal fluctuation with a genuine choice between
+  basins; the per-site time average separates them, and restarting chains from the
+  consensus shows that apparent second equilibria are finite-budget trapping.
+- **A two-valued field's reach is bounded before any simulation** by the share of
+  units on the side it predicts, which turns a non-replication into an expected
+  result.
+
+In the case itself, membership in the Gran Área Metropolitana (GAM), the capital
+region, reproduces 81% of the 2026 distritos at unit field strength (+13.4 points
+over geography alone, paired spatial-block p = 0.0013), beats an equally
+correlated development index at every weight scanned, and is reproduced by the
+official distrito-level boundary; the previous runoff's margin ties it at matched
+magnitude. The model's one province-level failure, Alajuela, is a provincial
+capital inside the metropolitan region that votes with the periphery, and the
+fitted system is a pinned, non-critical equilibrium reached by 14 of 16 random
+starts.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22730722.svg)](https://doi.org/10.5281/zenodo.22730722)
 
