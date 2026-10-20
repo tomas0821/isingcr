@@ -48,7 +48,7 @@ alignment_panel(axes[0], canton, f"canton resolution ($N={int(canton['N'])}$)", 
 alignment_panel(axes[1], distrito, f"distrito resolution ($N={int(distrito['N'])}$)", False)
 axes[0].set_ylabel("pooled alignment with real 2026 map")
 fig.tight_layout()
-fig.savefig(F / "resolution_reversal.png", dpi=200)
+fig.savefig(F / "resolution_reversal.png", dpi=400)
 print("wrote", F / "resolution_reversal.png")
 
 fig, axes = plt.subplots(2, 2, figsize=(10, 6.5))
@@ -64,5 +64,5 @@ for row, (d, name) in enumerate([(canton, "canton ($N=84$)"), (distrito, "distri
         if row == 0 and col == 0:
             ax.legend(fontsize=8)
 fig.tight_layout()
-fig.savefig(F / "response_functions_sm.png", dpi=200)
+fig.savefig(F / "response_functions_sm.png", dpi=400)
 print("wrote", F / "response_functions_sm.png")
